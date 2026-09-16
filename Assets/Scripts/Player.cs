@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
         if (move != 0)
         {
-            transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 3, 3);
+            transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 2, 2);
             //Nota para mi: como el personaje lo tengi escalado a 4, multiplico por 4 para que no se vea chiquito en el eje x
         }
         if (Input.GetButtonDown("Jump")&& isGrounded) {
