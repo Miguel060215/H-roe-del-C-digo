@@ -18,12 +18,14 @@ public class Player : MonoBehaviour
     private bool isClimbing;
     private float verticalInput;
     private float initialGravity;
+    private Animator animator;
 
     void Start()
     {
         //Aqui dentro se ejecutara el codigo al iniciar el juego
         rb2D = GetComponent<Rigidbody2D>();
         initialGravity = rb2D.gravityScale; // Guardar la gravedad inicial
+        animator = GetComponent<Animator>();
     }
 
 
@@ -46,13 +48,15 @@ public class Player : MonoBehaviour
 
         if (move != 0)
         {
-            transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 2, 2);
+            transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 4, 4);
             //Nota para mi: como el personaje lo tengi escalado a 4, multiplico por 4 para que no se vea chiquito en el eje x
         }
         if (Input.GetButtonDown("Jump") && isGrounded && !isClimbing)
         {
             rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
         }
+
+        animator.SetFloat("Speed", Mathf.Abs(move));
     }
 
     private void FixedUpdate()
