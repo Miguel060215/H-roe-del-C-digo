@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //variables
-    public float speed = 5;
+    public float speed = 4;
     private Rigidbody2D rb2D;
     private float move;
     public float jumpForce = 7;
@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
         }
 
         animator.SetFloat("Speed", Mathf.Abs(move));
+        animator.SetFloat("SpeedY", rb2D.linearVelocityY);
+        animator.SetBool("enSuelo", isGrounded);
     }
 
     private void FixedUpdate()
