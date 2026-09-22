@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //variables
-    public float speed = 4;
+    public float speed = 5;
     private Rigidbody2D rb2D;
     private float move;
     public float jumpForce = 7;
@@ -11,6 +11,12 @@ public class Player : MonoBehaviour
     public Transform groundCheck;
     public float groundRadius = 0.1f;
     public LayerMask groundLayer;
+
+    //variables para deteccion de paredes
+    [Header("Wall Check")]
+    public Transform wallCheck;
+    public float wallRadius = 0.2f;
+    private bool isTouchingWall;
 
     // Variables para la escalera
     [Header("Climbing")]
@@ -56,15 +62,22 @@ public class Player : MonoBehaviour
             rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
         }
 
+        bool pushing = isGrounded && isTouchingWall && (move != 0);
+
         animator.SetFloat("Speed", Mathf.Abs(move));
         animator.SetFloat("SpeedY", rb2D.linearVelocityY);
         animator.SetBool("enSuelo", isGrounded);
+        animator.SetBool("empuje", pushing);
     }
 
     private void FixedUpdate()
     {
         //Aqui dentro se ejecutara el codigo cada vez que se actualice la fisica del juego
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+
+        if (wallCheck != null) {
+            isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallRadius, groundLayer);
+        }
 
         if (isClimbing)
         {
