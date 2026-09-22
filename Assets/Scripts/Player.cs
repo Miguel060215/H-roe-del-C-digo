@@ -12,18 +12,26 @@ public class Player : MonoBehaviour
     public float groundRadius = 0.1f;
     public LayerMask groundLayer;
 
+    //variables para deteccion de paredes
+    [Header("Wall Check")]
+    public Transform wallCheck;
+    public float wallRadius = 0.2f;
+    private bool isTouchingWall;
+
     // Variables para la escalera
     [Header("Climbing")]
     public float climbSpeed = 5f;
     private bool isClimbing;
     private float verticalInput;
     private float initialGravity;
+    private Animator animator;
 
     void Start()
     {
         //Aqui dentro se ejecutara el codigo al iniciar el juego
         rb2D = GetComponent<Rigidbody2D>();
         initialGravity = rb2D.gravityScale; // Guardar la gravedad inicial
+        animator = GetComponent<Animator>();
     }
 
 
@@ -46,19 +54,30 @@ public class Player : MonoBehaviour
 
         if (move != 0)
         {
-            transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 2, 2);
+            transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 4, 4);
             //Nota para mi: como el personaje lo tengi escalado a 4, multiplico por 4 para que no se vea chiquito en el eje x
         }
         if (Input.GetButtonDown("Jump") && isGrounded && !isClimbing)
         {
             rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
         }
+
+        bool pushing = isGrounded && isTouchingWall && (move != 0);
+
+        animator.SetFloat("Speed", Mathf.Abs(move));
+        animator.SetFloat("SpeedY", rb2D.linearVelocityY);
+        animator.SetBool("enSuelo", isGrounded);
+        animator.SetBool("empuje", pushing);
     }
 
     private void FixedUpdate()
     {
         //Aqui dentro se ejecutara el codigo cada vez que se actualice la fisica del juego
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+
+        if (wallCheck != null) {
+            isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallRadius, groundLayer);
+        }
 
         if (isClimbing)
         {
