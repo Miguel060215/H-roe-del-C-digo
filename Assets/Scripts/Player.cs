@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -7,10 +8,13 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2D;
     private float move;
     public float jumpForce = 7;
-    private bool isGrounded;
+    public bool isGrounded;
     public Transform groundCheck;
     public float groundRadius = 0.1f;
     public LayerMask groundLayer;
+
+    [HideInInspector] public Vector3 ultimaPosicionSegura; // Variable para almacenar la última posición segura del jugador
+
 
     //variables para deteccion de paredes
     [Header("Wall Check")]
@@ -26,9 +30,13 @@ public class Player : MonoBehaviour
     private float initialGravity;
     private Animator animator;
 
+    [Header("Control de Estado")]
+    public bool puedeMoverse = true; // Variable para controlar si el jugador puede moverse
+
     void Start()
     {
         //Aqui dentro se ejecutara el codigo al iniciar el juego
+       // ultimaPosicionSegura = transform.position; // Inicializar la última posición segura al inicio del juego
         rb2D = GetComponent<Rigidbody2D>();
         initialGravity = rb2D.gravityScale; // Guardar la gravedad inicial
         animator = GetComponent<Animator>();
@@ -37,6 +45,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        if (!puedeMoverse) {
+            rb2D.linearVelocity = new Vector2(0, rb2D.linearVelocity.y);
+            animator.SetFloat("Speed", 0);
+            return; 
+        }
         move = Input.GetAxisRaw("Horizontal");//Uniti tiene definido la palabra Horizontal para el movimiento horizontal "a","d" y "<",">"
 
         // Capturar entrada vertical para la escalera
@@ -65,7 +78,7 @@ public class Player : MonoBehaviour
         bool pushing = isGrounded && isTouchingWall && (move != 0);
 
         animator.SetFloat("Speed", Mathf.Abs(move));
-        animator.SetFloat("SpeedY", rb2D.linearVelocityY);
+        animator.SetFloat("SpeedY", rb2D.linearVelocity.y);
         animator.SetBool("enSuelo", isGrounded);
         animator.SetBool("empuje", pushing);
     }
@@ -74,6 +87,10 @@ public class Player : MonoBehaviour
     {
         //Aqui dentro se ejecutara el codigo cada vez que se actualice la fisica del juego
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
+
+        if (isGrounded) { 
+            ultimaPosicionSegura = transform.position; // actualiza la uultima posición segura cuando el jugador este en el suelo
+        }
 
         if (wallCheck != null) {
             isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallRadius, groundLayer);
@@ -103,5 +120,19 @@ public class Player : MonoBehaviour
         {
             isClimbing = false;
         }
+    }
+
+    public bool EstaCallendo() {
+        return rb2D.linearVelocity.y < -0.1f && !isGrounded;
+    }
+
+    public void BloquarControles(float tiempo) {
+        StartCoroutine(RutinaBloqueo(tiempo));
+    }
+
+    private IEnumerator RutinaBloqueo(float tiempo) {
+        puedeMoverse = false;
+        yield return new WaitForSeconds(tiempo);
+        puedeMoverse = true;
     }
 }

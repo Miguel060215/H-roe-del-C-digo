@@ -45,9 +45,10 @@ GameObject:
   - component: {fileID: 4613347905690423238}
   - component: {fileID: 7332860920939815775}
   - component: {fileID: 7216784672370773585}
+  - component: {fileID: -2714344296258156889}
   m_Layer: 0
   m_Name: OtixBase_0
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,6 +238,25 @@ MonoBehaviour:
   wallCheck: {fileID: 9158256184649168526}
   wallRadius: 0.2
   climbSpeed: 5
+--- !u!114 &-2714344296258156889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681365242822425714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f953244685bc6c145a1e44b0bf9e3f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaludJugador
+  saludMaxima: 5
+  vidasAnimacion:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &6735005949363270724
 GameObject:
   m_ObjectHideFlags: 0
