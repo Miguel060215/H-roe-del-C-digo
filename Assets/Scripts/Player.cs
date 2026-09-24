@@ -33,6 +33,14 @@ public class Player : MonoBehaviour
     [Header("Control de Estado")]
     public bool puedeMoverse = true; // Variable para controlar si el jugador puede moverse
 
+    [Header("Audio")]
+    public AudioSource fuenteCaminar;
+    public AudioSource fuenteEfectos;
+    public AudioClip clipSalto;
+    [Header("Sistema de Reaparición")]
+    public static Vector3 puntoReaparicion; // Variable estática para almacenar el punto de reaparición
+    public static bool hayPuntoGuardado = false;
+
     void Start()
     {
         //Aqui dentro se ejecutara el codigo al iniciar el juego
@@ -40,6 +48,9 @@ public class Player : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         initialGravity = rb2D.gravityScale; // Guardar la gravedad inicial
         animator = GetComponent<Animator>();
+        if (hayPuntoGuardado) { 
+            transform.position = puntoReaparicion;
+        }
     }
 
 
@@ -73,6 +84,7 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded && !isClimbing)
         {
             rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
+            fuenteEfectos.PlayOneShot(clipSalto,0.8f);
         }
 
         bool pushing = isGrounded && isTouchingWall && (move != 0);
@@ -81,6 +93,15 @@ public class Player : MonoBehaviour
         animator.SetFloat("SpeedY", rb2D.linearVelocity.y);
         animator.SetBool("enSuelo", isGrounded);
         animator.SetBool("empuje", pushing);
+
+        bool estaCaminando = Mathf.Abs(move) > 0 && isGrounded && !isClimbing;
+        if (estaCaminando && !fuenteCaminar.isPlaying)
+        {
+            fuenteCaminar.Play();
+        }
+        else if (!estaCaminando && fuenteCaminar.isPlaying) { 
+            fuenteCaminar.Stop();
+        }
     }
 
     private void FixedUpdate()
@@ -96,14 +117,7 @@ public class Player : MonoBehaviour
             isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallRadius, groundLayer);
         }
 
-        if (isClimbing)
-        {
-            rb2D.gravityScale = 0f;
-        }
-        else
-        {
-            rb2D.gravityScale = initialGravity;
-        }
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
