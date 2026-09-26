@@ -125,6 +125,8 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             isClimbing = true;
+            rb2D.gravityScale = 0f;
+            rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, 0);
         }
     }
 
@@ -133,6 +135,7 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Ladder"))
         {
             isClimbing = false;
+            rb2D.gravityScale = initialGravity;
         }
     }
 
@@ -147,6 +150,11 @@ public class Player : MonoBehaviour
     private IEnumerator RutinaBloqueo(float tiempo) {
         puedeMoverse = false;
         yield return new WaitForSeconds(tiempo);
-        puedeMoverse = true;
+
+        SaludJugador salud = GetComponent<SaludJugador>();
+        if (salud != null && !salud.estaMuerto) {
+            puedeMoverse = true;
+        }
+      
     }
 }
