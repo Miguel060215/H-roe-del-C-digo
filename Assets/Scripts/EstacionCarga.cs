@@ -11,6 +11,8 @@ public class EstacionCarga : MonoBehaviour
     private bool curando = false;
     private GameObject jugadorObjeto;
     private Animator animatorBase;
+    public GameObject indicadorTecla;
+
 
     void Start()
     {
@@ -30,6 +32,7 @@ public class EstacionCarga : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            indicadorTecla.SetActive(true);
             jugadorCerca = true;
             jugadorObjeto = collision.gameObject;
         }
@@ -39,6 +42,7 @@ public class EstacionCarga : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            indicadorTecla.SetActive(false);
             jugadorCerca = false;
             jugadorObjeto = null;
         }

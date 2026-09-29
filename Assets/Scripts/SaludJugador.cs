@@ -27,9 +27,11 @@ public class SaludJugador : MonoBehaviour
     public AudioClip clipMuerte;
     public Image pantallaNegra;
     public SeguimientoCamara camaraScript; // Referencia al script de seguimiento de cámara
+    public bool estaMuerto = false; // Variable para controlar si el jugador está muerto
 
     void Start()
     {
+        estaMuerto = false;
         scriptPlayer = GetComponent<Player>();
         saludActual = saludMaxima;
         ActualizarVidasUI();
@@ -38,19 +40,17 @@ public class SaludJugador : MonoBehaviour
 
     public void RecibirDaño(int cantidadDano)
     {
-        if (esInvencible || saludActual <= 0) return;
+        if (estaMuerto || esInvencible || saludActual <= 0) return;
 
-        if (esInvencible) return;
-        fuenteEfectos.PlayOneShot(clipDano,0.5f);
-
+        fuenteEfectos.PlayOneShot(clipDano, 0.5f);
         saludActual -= cantidadDano;
-
         if (saludActual < 0) saludActual = 0;
-
         ActualizarVidasUI();
 
-        if (saludActual == 0) Muerte();
-        else StartCoroutine(RutinaInvencibilidad());
+        if (saludActual == 0) {
+            estaMuerto = true;
+            Muerte();
+        }else StartCoroutine(RutinaInvencibilidad());
     }
 
     public void CurarAlMaximo() {
@@ -60,7 +60,7 @@ public class SaludJugador : MonoBehaviour
 
     public void RecibirDannoTrampa(int cantidadDano)
     {
-        if (esInvencible) return;
+        if (estaMuerto || esInvencible) return;
         fuenteEfectos.PlayOneShot(clipDano, 0.5f);
 
         // lo regresamos a la ultima zona segura q toco y le blokeamos el movimiento un rato
@@ -77,8 +77,10 @@ public class SaludJugador : MonoBehaviour
 
         ActualizarVidasUI();
 
-        if (saludActual == 0) Muerte();
-        else StartCoroutine(RutinaInvencibilidad());
+        if (saludActual == 0) {
+            estaMuerto = true;
+            Muerte();
+        } else StartCoroutine(RutinaInvencibilidad());
     }
 
     // funcion extra para bajar vida y actulizar interfaz por si lo ocupo despues sin repetir codigo
@@ -137,7 +139,11 @@ public class SaludJugador : MonoBehaviour
         }
         //hago que se incie la animacoon de muerte
         Animator anim = GetComponent<Animator>();
-        if (anim != null) { 
+        if (anim != null) {
+            anim.SetFloat("Speed", 0f);
+            anim.SetFloat("SpeedY",0f);
+            anim.SetBool("enSuelo",true);
+
             anim.SetTrigger("Muerte");
         }
         //apago la musica de fondo del nivel y pongo la de muerte de Otix
