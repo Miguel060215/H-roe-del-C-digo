@@ -5,6 +5,7 @@ public class CartaColeccionable : MonoBehaviour
     [Header("Configuracion")]
     public int idCarta; // es para identificar a cada una de las 7 u 8 cartas que voy a dar;e al jugador
     public GameObject indicadorTecla;
+    public AudioClip sonidoRecoleccion;
 
     private bool jugadorEnRango = false;
     private Player jugadorScript;
@@ -51,6 +52,16 @@ public class CartaColeccionable : MonoBehaviour
         }
 
         Debug.Log("Carta " + idCarta + "recolectada. Falta abrir la interfaz");
+
+        HUDCartas hud = FindFirstObjectByType<HUDCartas>();
+        if (hud != null) {
+            hud.ActivarIcono(idCarta);
+        }
+
+        if (sonidoRecoleccion != null) {
+            AudioSource.PlayClipAtPoint(sonidoRecoleccion, Camera.main.transform.position);
+        }
+
         Destroy(gameObject);
     }
 }
