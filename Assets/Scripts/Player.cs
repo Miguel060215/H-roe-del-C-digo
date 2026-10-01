@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2D;
     private float move;
     public float jumpForce = 7;
-    public bool isGrounded;
+    public bool isGrounded;  
     public Transform groundCheck;
     public float groundRadius = 0.1f;
     public LayerMask groundLayer;
@@ -157,4 +157,9 @@ public class Player : MonoBehaviour
         }
       
     }
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        Debug.Log("<color=red>OTIX CHOCÓ CONTRA:</color> " + collision.gameObject.name);
+    }*/
 }
