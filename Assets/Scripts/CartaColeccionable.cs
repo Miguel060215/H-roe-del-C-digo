@@ -53,7 +53,7 @@ public class CartaColeccionable : MonoBehaviour
 
         Debug.Log("Carta " + idCarta + "recolectada. Falta abrir la interfaz");
 
-        HUDCartas hud = FindFirstObjectByType<HUDCartas>();
+        HUDCartas hud = FindAnyObjectByType<HUDCartas>();
         if (hud != null) {
             hud.ActivarIcono(idCarta);
         }
