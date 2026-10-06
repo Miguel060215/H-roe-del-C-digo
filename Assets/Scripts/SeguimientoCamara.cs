@@ -6,6 +6,7 @@ using System.Collections;
 public class SeguimientoCamara : MonoBehaviour
 {
     public Transform target; // El objetivo que la cámara seguirá
+    public float suavizado = 03f; // Suavizado del movimiento de la cámara
     private Camera cam;
     private float tamanoOriginal;
 
@@ -16,7 +17,8 @@ public class SeguimientoCamara : MonoBehaviour
     }
     private void LateUpdate() {
         if (target != null) {
-            transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+            Vector3 posicionObjetivo = new Vector3(target.position.x, target.position.y, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, posicionObjetivo, suavizado);
         }
         
     }
