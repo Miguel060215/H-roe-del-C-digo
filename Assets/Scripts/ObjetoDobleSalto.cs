@@ -23,7 +23,7 @@ public class ObjetoDobleSalto : MonoBehaviour
             {
                 yaRecogido = true;
 
-                player.tieneDobleSalto = true;
+                Player.tieneDobleSalto = true;
                 player.BloquarControles(2f);
 
                 if (sonidoRecogido != null)
