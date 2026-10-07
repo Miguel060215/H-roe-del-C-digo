@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     public static bool hayPuntoGuardado = false;
 
     [Header("Doble Salto")]
-    public bool tieneDobleSalto = false;
+    public static bool tieneDobleSalto = false;
     private bool puedeDobleSalto = false;
 
     void Start()

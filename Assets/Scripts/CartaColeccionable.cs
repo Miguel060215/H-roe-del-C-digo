@@ -12,7 +12,13 @@ public class CartaColeccionable : MonoBehaviour
     private Animator jugadorAnim;
 
 
-    // Update is called once per frame
+    
+    void Start()
+    {
+        if (HUDCartas.cartasRecolectadas.Contains(idCarta)) { 
+            Destroy(gameObject);
+        }
+    }
     void Update()
     {
         if (jugadorEnRango && Input.GetKeyDown(KeyCode.Z)) {
