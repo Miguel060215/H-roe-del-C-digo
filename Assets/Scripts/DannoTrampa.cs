@@ -17,9 +17,7 @@ public class DannoTrampa : MonoBehaviour
 
             if (saludJugador != null)
             {
-                // Aplicamos el daño.
-                // NOTA: Usamos RecibirDaño estándar para simplificar,
-                // o llama a tu método RecibirDannoTrampa si quieres el efecto de stun.
+
                 saludJugador.RecibirDannoTrampa(daño);
             }
         }

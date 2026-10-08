@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2D;
     private float move;
     public float jumpForce = 7;
-    public bool isGrounded;  
+    public bool isGrounded;
     public Transform groundCheck;
     public float groundRadius = 0.1f;
     public LayerMask groundLayer;
@@ -41,14 +41,19 @@ public class Player : MonoBehaviour
     public static Vector3 puntoReaparicion; // Variable estática para almacenar el punto de reaparición
     public static bool hayPuntoGuardado = false;
 
+    [Header("Doble Salto")]
+    public static bool tieneDobleSalto = false;
+    private bool puedeDobleSalto = false;
+
     void Start()
     {
         //Aqui dentro se ejecutara el codigo al iniciar el juego
-       // ultimaPosicionSegura = transform.position; // Inicializar la última posición segura al inicio del juego
+        // ultimaPosicionSegura = transform.position; // Inicializar la última posición segura al inicio del juego
         rb2D = GetComponent<Rigidbody2D>();
         initialGravity = rb2D.gravityScale; // Guardar la gravedad inicial
         animator = GetComponent<Animator>();
-        if (hayPuntoGuardado) { 
+        if (hayPuntoGuardado)
+        {
             transform.position = puntoReaparicion;
         }
     }
@@ -56,10 +61,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (!puedeMoverse) {
+        if (!puedeMoverse)
+        {
             rb2D.linearVelocity = new Vector2(0, rb2D.linearVelocity.y);
             animator.SetFloat("Speed", 0);
-            return; 
+            animator.SetFloat("SpeedY", 0);
+            animator.SetBool("enSuelo", true);
+            return;
         }
         move = Input.GetAxisRaw("Horizontal");//Uniti tiene definido la palabra Horizontal para el movimiento horizontal "a","d" y "<",">"
 
@@ -81,27 +89,47 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 4, 4);
             //Nota para mi: como el personaje lo tengi escalado a 4, multiplico por 4 para que no se vea chiquito en el eje x
         }
-        if (Input.GetButtonDown("Jump") && isGrounded && !isClimbing)
+
+        if (isGrounded || isClimbing)
         {
-            rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
-            fuenteEfectos.PlayOneShot(clipSalto,0.8f);
+            puedeDobleSalto = true;
+        }
+
+        if (Input.GetButtonDown("Jump") && !isClimbing)
+        {
+            if (isGrounded)
+            {
+                // Salto normal desde el suelo
+                rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
+                fuenteEfectos.PlayOneShot(clipSalto, 0.8f);
+            }
+            else if (!isGrounded && puedeDobleSalto && tieneDobleSalto)
+            {
+                // ¡Doble salto en el aire!
+                rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
+                fuenteEfectos.PlayOneShot(clipSalto, 0.8f);
+                puedeDobleSalto = false; // Consumimos el doble salto hasta volver a tocar tierra
+            }
         }
 
         bool pushing = isGrounded && isTouchingWall && (move != 0);
+        bool estaCaminando = Mathf.Abs(move) > 0 && isGrounded && !isClimbing;
+        if (estaCaminando && !fuenteCaminar.isPlaying)
+        {
+            fuenteCaminar.Play();
+        }
+        else if (!estaCaminando && fuenteCaminar.isPlaying)
+        {
+            fuenteCaminar.Stop();
+        }
+
 
         animator.SetFloat("Speed", Mathf.Abs(move));
         animator.SetFloat("SpeedY", rb2D.linearVelocity.y);
         animator.SetBool("enSuelo", isGrounded);
         animator.SetBool("empuje", pushing);
 
-        bool estaCaminando = Mathf.Abs(move) > 0 && isGrounded && !isClimbing;
-        if (estaCaminando && !fuenteCaminar.isPlaying)
-        {
-            fuenteCaminar.Play();
-        }
-        else if (!estaCaminando && fuenteCaminar.isPlaying) { 
-            fuenteCaminar.Stop();
-        }
+
     }
 
     private void FixedUpdate()
@@ -109,15 +137,17 @@ public class Player : MonoBehaviour
         //Aqui dentro se ejecutara el codigo cada vez que se actualice la fisica del juego
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
-        if (isGrounded) { 
+        if (isGrounded)
+        {
             ultimaPosicionSegura = transform.position; // actualiza la uultima posición segura cuando el jugador este en el suelo
         }
 
-        if (wallCheck != null) {
+        if (wallCheck != null)
+        {
             isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallRadius, groundLayer);
         }
 
-       
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -139,23 +169,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    public bool EstaCallendo() {
+    public bool EstaCallendo()
+    {
         return rb2D.linearVelocity.y < -0.1f && !isGrounded;
     }
 
-    public void BloquarControles(float tiempo) {
+    public void BloquarControles(float tiempo)
+    {
         StartCoroutine(RutinaBloqueo(tiempo));
     }
 
-    private IEnumerator RutinaBloqueo(float tiempo) {
+    private IEnumerator RutinaBloqueo(float tiempo)
+    {
         puedeMoverse = false;
         yield return new WaitForSeconds(tiempo);
 
         SaludJugador salud = GetComponent<SaludJugador>();
-        if (salud != null && !salud.estaMuerto) {
+        if (salud != null && !salud.estaMuerto)
+        {
             puedeMoverse = true;
         }
-      
+
     }
     /*private void OnCollisionEnter2D(Collision2D collision)
     {
