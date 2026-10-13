@@ -813756,7 +813756,7 @@ Tilemap:
     m_Data: {fileID: -8975063331978806561, guid: a32d759710abc3540b10459bbe330772, type: 3}
   m_TileMatrixArray:
   - serializedVersion: 2
-    m_RefCount: 1319
+    m_RefCount: 1305
     m_Data:
       e00: 1
       e01: 0
@@ -813867,6 +813867,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7799176604468746484, guid: b02d133407d1fc04191f4b73f2711e24, type: 3}
+      propertyPath: imagenPantalla
+      value: 
+      objectReference: {fileID: 486160119}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
