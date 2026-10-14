@@ -127,7 +127,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: BotonesCartas
     originalName: 
-    pivot: {x: 0.91999996, y: -0.48}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -135,9 +135,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 25
-      height: 50
-    spriteID: 11241fa667c6b564ba77966ec84d5db6
+      width: 75
+      height: 150
+    spriteID: 46d6a33ea8a578749b7c66a28869fd9d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -165,11 +165,11 @@ ScriptedImporter:
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 66
-        y: 24
-        width: 25
-        height: 50
-      spriteId: 11241fa667c6b564ba77966ec84d5db6
+        x: 0
+        y: 0
+        width: 75
+        height: 150
+      spriteId: 46d6a33ea8a578749b7c66a28869fd9d
     linkedCells: []
     tileCells: []
     tileSetIndex: 0
@@ -178,5 +178,5 @@ ScriptedImporter:
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
-  previousTextureSize: {x: 64, y: 64}
-  canvasSize: {x: 178, y: 100}
+  previousTextureSize: {x: 128, y: 256}
+  canvasSize: {x: 75, y: 150}

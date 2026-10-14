@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+
         if (!puedeMoverse)
         {
             rb2D.linearVelocity = new Vector2(0, rb2D.linearVelocity.y);
@@ -89,6 +90,8 @@ public class Player : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 4, 4);
             //Nota para mi: como el personaje lo tengi escalado a 4, multiplico por 4 para que no se vea chiquito en el eje x
         }
+
+
 
         if (isGrounded || isClimbing)
         {
