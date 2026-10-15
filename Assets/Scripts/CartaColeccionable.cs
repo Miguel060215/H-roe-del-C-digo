@@ -57,7 +57,11 @@ public class CartaColeccionable : MonoBehaviour
             jugadorAnim.SetTrigger("Recolectar");
         }
 
-        Debug.Log("Carta " + idCarta + "recolectada. Falta abrir la interfaz");
+        ControladorMenu menu = FindAnyObjectByType<ControladorMenu>();
+        if (menu != null) { 
+            menu.AbrirMenuConRetraso(idCarta, 2f);
+        }
+        //Debug.Log("Carta " + idCarta + "recolectada. Falta abrir la interfaz");
 
         HUDCartas hud = FindAnyObjectByType<HUDCartas>();
         if (hud != null) {

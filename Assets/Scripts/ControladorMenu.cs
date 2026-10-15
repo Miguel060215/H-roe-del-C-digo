@@ -15,9 +15,11 @@ public class ControladorMenu : MonoBehaviour
 
 
     [Header("Referencias UI")]
+    public GameObject contenedorCartas;
     public Image imagenContenidoCentral;
     public Button[] botonesPestanas;
     public Button botonCerrar;
+    
 
     [Header("Sprites de estados")]
     public Sprite[] spritesBloqueado;
@@ -34,6 +36,22 @@ public class ControladorMenu : MonoBehaviour
 
 
     private int cartaActual = 0;
+
+    private bool estaBloqueado = false;
+
+    [Header("Modo Forzado")]
+    public float tiempoBloqueoForzado = 3f;
+
+    [Header("Progreso del jugador")]
+    public static bool[] cartasDesbloqueadas = new bool[7];
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void ReiniciarDatosMenu()
+    {
+        
+        cartasDesbloqueadas = new bool[7];
+      //  cartasDesbloqueadas[0] = true; 
+    }
 
     void Start()
     {
@@ -62,6 +80,27 @@ public class ControladorMenu : MonoBehaviour
         fondoOsculo.SetActive(true);
         StartCoroutine(AnimarMenu(posicionOculta, posicionVisible));
         MA = true;
+
+        bool tieneCarta = false;
+        for (int i = 0; i < cartasDesbloqueadas.Length; i++) {
+            if (cartasDesbloqueadas[i] == true) { 
+                tieneCarta = true;
+                break;
+            }
+        }
+
+        if (contenedorCartas != null) { 
+            contenedorCartas.SetActive(tieneCarta);
+        }
+
+        if (tieneCarta && !cartasDesbloqueadas[cartaActual]) {
+            for (int i = 0; i < cartasDesbloqueadas.Length; i++) {
+                if (cartasDesbloqueadas[i] == true) { 
+                    CambiarCarta(i);
+                    break;
+                }
+            }
+        }
     }
 
     public void CerrarMenu() {
@@ -90,7 +129,7 @@ public class ControladorMenu : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.Q) && !estaBloqueado) {
 
             if (MA == false) {
                 AbrirMenu();
@@ -103,6 +142,11 @@ public class ControladorMenu : MonoBehaviour
     }
 
     public void CambiarCarta(int indice) {
+
+        if (!cartasDesbloqueadas[indice]) {
+            return;
+        }
+
         ReproducirSonidoClick();
         cartaActual = indice;
 
@@ -117,11 +161,16 @@ public class ControladorMenu : MonoBehaviour
 
     private void ActualizarSpritesBotones() {
         for (int i = 0; i < botonesPestanas.Length; i++) {
-            if (i == cartaActual)
+            if (!cartasDesbloqueadas[i])
+            {
+                botonesPestanas[i].GetComponent<Image>().sprite = spritesBloqueado[i];
+
+            }
+            else if (i == cartaActual)
             {
                 botonesPestanas[i].GetComponent<Image>().sprite = spritesSeleccionado[i];
             }
-            else { 
+            else {
                 botonesPestanas[i].GetComponent<Image>().sprite = SpritesDisponible[i];
             }
         }
@@ -135,4 +184,42 @@ public class ControladorMenu : MonoBehaviour
         }
     }
 
+    public void AbrirMenuForzado(int indice) {
+        if (estaBloqueado) { return; }
+
+        cartasDesbloqueadas[indice] = true;
+
+        CambiarCarta(indice);
+        AbrirMenu();
+        MA = true;
+
+        StartCoroutine(RutinaDeBloqueo(tiempoBloqueoForzado));
+    }
+
+    private IEnumerator RutinaDeBloqueo(float tiempo) {
+        estaBloqueado = true;
+
+        botonCerrar.interactable = false;
+        for (int i = 0; i < botonesPestanas.Length; i++) { 
+            botonesPestanas[i].interactable = false;
+        }
+        yield return new WaitForSeconds(tiempo);
+
+        botonCerrar.interactable = true;
+        for (int i = 0; i < botonesPestanas.Length; i++) { 
+            botonesPestanas[i].interactable = true;
+        }
+        estaBloqueado = false;
+    }
+
+    public void AbrirMenuConRetraso(int indice, float tiempoDeRetraso)
+    {
+        StartCoroutine(RutinaAbrirConRetraso(indice, tiempoDeRetraso));
+    }
+
+    private IEnumerator RutinaAbrirConRetraso(int indice, float retraso)
+    {
+        yield return new WaitForSeconds(retraso); 
+        AbrirMenuForzado(indice);                 
+    }
 }
