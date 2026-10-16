@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: ca51863ccfa3e6441a6e009a4269ed3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6446183127269708604
+    second: naveEspacial_0
+  - first:
+      213: 8109688144657200152
+    second: naveEspacial_1
+  - first:
+      213: 244745509696851725
+    second: naveEspacial_2
+  - first:
+      213: -2550890548669917291
+    second: naveEspacial_3
+  - first:
+      213: 7324280058515181324
+    second: naveEspacial_4
+  - first:
+      213: -4017147302677706968
+    second: naveEspacial_5
+  - first:
+      213: -1790620228863120358
+    second: naveEspacial_6
+  - first:
+      213: -5971891618007163774
+    second: naveEspacial_7
+  - first:
+      213: 808768258383803935
+    second: naveEspacial_8
+  - first:
+      213: -8659958678276873787
+    second: naveEspacial_9
+  - first:
+      213: 6295862276230692940
+    second: naveEspacial_10
+  - first:
+      213: 4467273410165803008
+    second: naveEspacial_11
+  - first:
+      213: -3321228250361295395
+    second: naveEspacial_12
+  - first:
+      213: -8280874242403339501
+    second: naveEspacial_13
+  - first:
+      213: 2898604065243479038
+    second: naveEspacial_14
+  - first:
+      213: -793408854957553167
+    second: naveEspacial_15
+  - first:
+      213: 3752610651545297400
+    second: naveEspacial_16
+  - first:
+      213: -1712852343330699488
+    second: naveEspacial_17
+  - first:
+      213: 8094540357755471755
+    second: naveEspacial_18
+  - first:
+      213: 8485879981113337932
+    second: naveEspacial_19
+  - first:
+      213: 2966899708413981047
+    second: naveEspacial_20
+  - first:
+      213: 8772653938769317525
+    second: naveEspacial_21
+  - first:
+      213: 749058705624843798
+    second: naveEspacial_22
+  - first:
+      213: 124451101970051961
+    second: naveEspacial_23
+  - first:
+      213: -3596391118878296261
+    second: naveEspacial_24
+  - first:
+      213: 136144316769492154
+    second: naveEspacial_25
+  - first:
+      213: 8960247574066215807
+    second: naveEspacial_26
+  - first:
+      213: -9184373570221201455
+    second: naveEspacial_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: naveEspacial_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 289
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cce8fd599e8a86a0800000000000000
+      internalID: -6446183127269708604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_1
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 44
+        width: 312
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8143d7d86666b8070800000000000000
+      internalID: 8109688144657200152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_2
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 44
+        width: 351
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f4add8eb2856300800000000000000
+      internalID: 244745509696851725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_3
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 44
+        width: 298
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 597d0a9af8a699cd0800000000000000
+      internalID: -2550890548669917291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_4
+      rect:
+        serializedVersion: 2
+        x: 1390
+        y: 151
+        width: 41
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f464358e115a560800000000000000
+      internalID: 7324280058515181324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_5
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 138
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8270a7ddfc93048c0800000000000000
+      internalID: -4017147302677706968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_6
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 151
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c2cf293607627e0800000000000000
+      internalID: -1790620228863120358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_7
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 44
+        width: 290
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28cdc8fb6349f1da0800000000000000
+      internalID: -5971891618007163774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_8
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 155
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16f39a2272593b00800000000000000
+      internalID: 808768258383803935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_9
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 151
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1eebbe675a1d780800000000000000
+      internalID: -8659958678276873787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_10
+      rect:
+        serializedVersion: 2
+        x: 1786
+        y: 149
+        width: 27
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40438122656f5750800000000000000
+      internalID: 6295862276230692940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_11
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 44
+        width: 311
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0080b777f71fefd30800000000000000
+      internalID: 4467273410165803008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_12
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 138
+        width: 39
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd093fb080a8e1d0800000000000000
+      internalID: -3321228250361295395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_13
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 146
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313fddf10cc641d80800000000000000
+      internalID: -8280874242403339501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_14
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 143
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb37553a09e93820800000000000000
+      internalID: 2898604065243479038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_15
+      rect:
+        serializedVersion: 2
+        x: 1757
+        y: 138
+        width: 27
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f90b9e99de3df4f0800000000000000
+      internalID: -793408854957553167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_16
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 142
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f164b16183f31430800000000000000
+      internalID: 3752610651545297400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_17
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 145
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027041b6ed9ba38e0800000000000000
+      internalID: -1712852343330699488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_18
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 112
+        width: 35
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8704149195955070800000000000000
+      internalID: 8094540357755471755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_19
+      rect:
+        serializedVersion: 2
+        x: 1409
+        y: 110
+        width: 28
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48ebd8f1e6e3c570800000000000000
+      internalID: 8485879981113337932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_20
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 112
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 771b934c09b8c2920800000000000000
+      internalID: 2966899708413981047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_21
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 104
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ec6cd174abeb970800000000000000
+      internalID: 8772653938769317525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_22
+      rect:
+        serializedVersion: 2
+        x: 1785
+        y: 117
+        width: 15
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 616cea09ce0356a00800000000000000
+      internalID: 749058705624843798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_23
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 98
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973b4dc2e932ab100800000000000000
+      internalID: 124451101970051961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_24
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 97
+        width: 32
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b37b3e5f45d071ec0800000000000000
+      internalID: -3596391118878296261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_25
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 109
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abcdb37e88ea3e100800000000000000
+      internalID: 136144316769492154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_26
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 103
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7bb5c7f1b1395c70800000000000000
+      internalID: 8960247574066215807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: naveEspacial_27
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 92
+        width: 18
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d7aa7616ec8a8080800000000000000
+      internalID: -9184373570221201455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      naveEspacial_0: -6446183127269708604
+      naveEspacial_1: 8109688144657200152
+      naveEspacial_10: 6295862276230692940
+      naveEspacial_11: 4467273410165803008
+      naveEspacial_12: -3321228250361295395
+      naveEspacial_13: -8280874242403339501
+      naveEspacial_14: 2898604065243479038
+      naveEspacial_15: -793408854957553167
+      naveEspacial_16: 3752610651545297400
+      naveEspacial_17: -1712852343330699488
+      naveEspacial_18: 8094540357755471755
+      naveEspacial_19: 8485879981113337932
+      naveEspacial_2: 244745509696851725
+      naveEspacial_20: 2966899708413981047
+      naveEspacial_21: 8772653938769317525
+      naveEspacial_22: 749058705624843798
+      naveEspacial_23: 124451101970051961
+      naveEspacial_24: -3596391118878296261
+      naveEspacial_25: 136144316769492154
+      naveEspacial_26: 8960247574066215807
+      naveEspacial_27: -9184373570221201455
+      naveEspacial_3: -2550890548669917291
+      naveEspacial_4: 7324280058515181324
+      naveEspacial_5: -4017147302677706968
+      naveEspacial_6: -1790620228863120358
+      naveEspacial_7: -5971891618007163774
+      naveEspacial_8: 808768258383803935
+      naveEspacial_9: -8659958678276873787
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
