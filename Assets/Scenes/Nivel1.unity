@@ -10708,12 +10708,12 @@ MonoBehaviour:
   - {fileID: 1917850215, guid: 8ca2f05cfa769a54183a9b40133ffdb0, type: 3}
   contenidoCartas:
   - {fileID: -2495134856395812611, guid: 1070572171e57bc469d5d6d32e3c1bd6, type: 3}
-  - {fileID: -2861754768038755919, guid: 3147a762c58ccfc4fae89f94c84b9c3b, type: 3}
-  - {fileID: -6178938586776113776, guid: 67933dd03b032764c8530721803cff75, type: 3}
-  - {fileID: 5485820867703073636, guid: 108a2a52dd2ddc943b57401ff7745d88, type: 3}
   - {fileID: -2495134856395812611, guid: 1070572171e57bc469d5d6d32e3c1bd6, type: 3}
   - {fileID: -2861754768038755919, guid: 3147a762c58ccfc4fae89f94c84b9c3b, type: 3}
   - {fileID: -6178938586776113776, guid: 67933dd03b032764c8530721803cff75, type: 3}
+  - {fileID: 5485820867703073636, guid: 108a2a52dd2ddc943b57401ff7745d88, type: 3}
+  - {fileID: -8513349991497621950, guid: 3ba5638cc800048488a8f174a4001583, type: 3}
+  - {fileID: -7133782301778268846, guid: e4a6fff70e2b3724d951bbc4018f4337, type: 3}
   fuenteAudio: {fileID: 859487136}
   sonidoClick: {fileID: 8300000, guid: 9bd065a9a92fb6740b689f83d034e0d4, type: 3}
   volumenClick: 3
