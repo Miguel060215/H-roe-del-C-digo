@@ -47,6 +47,8 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+
+
         //Aqui dentro se ejecutara el codigo al iniciar el juego
         // ultimaPosicionSegura = transform.position; // Inicializar la última posición segura al inicio del juego
         rb2D = GetComponent<Rigidbody2D>();

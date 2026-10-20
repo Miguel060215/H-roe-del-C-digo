@@ -151,12 +151,29 @@ public class ControladorMenu : MonoBehaviour
         cartaActual = indice;
 
         imagenContenidoCentral.sprite = contenidoCartas[indice];
-       // imagenContenidoCentral.SetNativeSize();
+        AjustarImagenAlAncho();
+        //imagenContenidoCentral.SetNativeSize();
 
         if (scrollCartas != null) { 
             scrollCartas.verticalNormalizedPosition = 1f;
         }
         ActualizarSpritesBotones();
+    }
+    private void AjustarImagenAlAncho()
+    {
+        Sprite sprite = imagenContenidoCentral.sprite;
+        if (sprite == null) return;
+
+        RectTransform rt = imagenContenidoCentral.rectTransform;
+
+        // Ancho disponible = ancho de la zona visible (el padre)
+        RectTransform padre = rt.parent as RectTransform;
+        float anchoDisponible = padre.rect.width;
+
+        // Alto proporcional a la imagen
+        float proporcion = sprite.rect.height / sprite.rect.width;
+
+        rt.sizeDelta = new Vector2(0f, anchoDisponible * proporcion);
     }
 
     private void ActualizarSpritesBotones() {
