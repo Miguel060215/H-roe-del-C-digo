@@ -11,7 +11,7 @@ public class CartaColeccionable : MonoBehaviour
     private Player jugadorScript;
     private Animator jugadorAnim;
 
-
+     
     
     void Start()
     {
