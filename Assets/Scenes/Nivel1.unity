@@ -10853,13 +10853,13 @@ MonoBehaviour:
   volumenClick: 3
   fuenteAudioCartas: {fileID: 859487137}
   audiosCartas:
-  - {fileID: 8300000, guid: 4bc9c1de55576444391d02e408c4429c, type: 3}
-  - {fileID: 8300000, guid: 4bc9c1de55576444391d02e408c4429c, type: 3}
-  - {fileID: 8300000, guid: 4bc9c1de55576444391d02e408c4429c, type: 3}
-  - {fileID: 8300000, guid: 4bc9c1de55576444391d02e408c4429c, type: 3}
-  - {fileID: 8300000, guid: 4bc9c1de55576444391d02e408c4429c, type: 3}
-  - {fileID: 8300000, guid: 4bc9c1de55576444391d02e408c4429c, type: 3}
-  - {fileID: 8300000, guid: 4bc9c1de55576444391d02e408c4429c, type: 3}
+  - {fileID: 8300000, guid: 62cced7f27366a54baadee93da768c15, type: 3}
+  - {fileID: 8300000, guid: 55638836dae1dcd4fac525d90a139e04, type: 3}
+  - {fileID: 8300000, guid: ae96704c4bccae742a007dd396d817d6, type: 3}
+  - {fileID: 8300000, guid: 3e03c52c6a13e8846a12f267f0bd9846, type: 3}
+  - {fileID: 8300000, guid: 9277766b57310f240b78fe1d6f6e2267, type: 3}
+  - {fileID: 8300000, guid: f33003dd4b8980e40939bb76a221b1c8, type: 3}
+  - {fileID: 8300000, guid: c632f5be8846ce24cbd03feef1482eb4, type: 3}
   iconoBtnAudio: {fileID: 258390589}
   iconoPlay: {fileID: -5732160120924574217, guid: 89d5a98e7c31cb8438a14c8bfe646bd0, type: 3}
   iconoPause: {fileID: 1606864871, guid: 89d5a98e7c31cb8438a14c8bfe646bd0, type: 3}
@@ -10972,7 +10972,7 @@ AudioSource:
   m_GameObject: {fileID: 859487133}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6437506972777379501, guid: 7e3aa3bc4ed7bd245926bc248d028013, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
