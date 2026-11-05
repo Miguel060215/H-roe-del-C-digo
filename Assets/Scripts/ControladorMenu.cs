@@ -29,10 +29,18 @@ public class ControladorMenu : MonoBehaviour
     [Header("Base de datos de las cartas")]
     public Sprite[] contenidoCartas;
 
-    [Header("Audio")]
+    [Header("Audio Menu")]
     public AudioSource fuenteAudio;
     public AudioClip sonidoClick;
     [Range(0f, 3f)] public float volumenClick = 1f;
+
+    [Header("Audio de las cartas")]
+    public AudioSource fuenteAudioCartas;
+    public AudioClip[] audiosCartas;
+    public Image iconoBtnAudio;
+    public Sprite iconoPlay;
+    public Sprite iconoPause;
+    [Range(0f, 3f)] public float volumenCartas = 1f;
 
 
     private int cartaActual = 0;
@@ -106,6 +114,7 @@ public class ControladorMenu : MonoBehaviour
     public void CerrarMenu() {
         ReproducirSonidoClick();
         StartCoroutine(AnimarMenu(posicionVisible, posicionOculta, true));
+        if(fuenteAudioCartas != null) fuenteAudioCartas.Stop();
         MA = false;
     }
 
@@ -158,6 +167,23 @@ public class ControladorMenu : MonoBehaviour
             scrollCartas.verticalNormalizedPosition = 1f;
         }
         ActualizarSpritesBotones();
+
+        if(fuenteAudioCartas != null && audiosCartas.Length > indice && audiosCartas[indice] != null)
+        {
+            fuenteAudioCartas.clip = audiosCartas[indice];
+            fuenteAudioCartas.volume = volumenCartas;
+            fuenteAudioCartas.Play();
+            if (iconoBtnAudio != null) { 
+                iconoBtnAudio.sprite = iconoPause;
+            }
+        }
+        else {
+            if (fuenteAudioCartas != null) { 
+                fuenteAudioCartas.Stop();
+                fuenteAudioCartas.clip = null;
+            }
+            if(iconoBtnAudio != null) iconoBtnAudio.sprite = iconoPlay;
+        }
     }
     private void AjustarImagenAlAncho()
     {
@@ -227,6 +253,26 @@ public class ControladorMenu : MonoBehaviour
             botonesPestanas[i].interactable = true;
         }
         estaBloqueado = false;
+    }
+
+    public void AlternarAudioCarta() { 
+        if (fuenteAudioCartas == null || fuenteAudioCartas.clip == null) return;
+
+        if (fuenteAudioCartas.isPlaying) {
+            fuenteAudioCartas.Pause();
+            if (iconoBtnAudio != null)
+            {
+                iconoBtnAudio.sprite = iconoPlay;
+            }
+        }
+        else
+        {
+            fuenteAudioCartas.Play();
+            if (iconoBtnAudio != null)
+            {
+                iconoBtnAudio.sprite = iconoPause;
+            }
+        }
     }
 
     public void AbrirMenuConRetraso(int indice, float tiempoDeRetraso)

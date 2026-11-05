@@ -13,11 +13,15 @@ public class EstacionCarga : MonoBehaviour
     private Animator animatorBase;
     public GameObject indicadorTecla;
 
+    [Header("Efectos de sonido")]
+    public AudioSource fuenteAudio;
+    public AudioClip sonidoRecarga;
+
 
     void Start()
     {
         animatorBase = GetComponent<Animator>();
-    }
+    }  
 
     void Update()
     {
@@ -25,6 +29,10 @@ public class EstacionCarga : MonoBehaviour
         if (jugadorCerca && !curando && Input.GetKeyDown(teclaInteraccion))
         {
             StartCoroutine(RutinaCuracion());
+            if (fuenteAudio != null && sonidoRecarga != null)
+            {
+                fuenteAudio.PlayOneShot(sonidoRecarga);
+            }
         }
     }
 
@@ -35,6 +43,7 @@ public class EstacionCarga : MonoBehaviour
             indicadorTecla.SetActive(true);
             jugadorCerca = true;
             jugadorObjeto = collision.gameObject;
+
         }
     }
 
