@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class ProblemaPython
@@ -28,12 +30,18 @@ public class ControladorReto : MonoBehaviour
     public Image imgContadorAciertos;
     public Sprite[] spritesAciertos;
 
+    [Header("Transicion de Nivel")]
+    public Image pantallaNegra;
+    public TextMeshProUGUI txtMensaje1;
+    public string nombreSiguienteEscena = "Nivel2";
+
     [Header("Baase de datos")]
     public ProblemaPython[] listaProblemas;
 
     private int problemaActualIndice = 0;
     private int aciertos = 0;
     private int opcionesSeleccionada = -1;
+    private bool enTransicion = false;
 
     [Header("UI elementos")]
     public GameObject panelBlanco;
@@ -42,6 +50,12 @@ public class ControladorReto : MonoBehaviour
     void OnEnable()
     {
         aciertos = 0;
+        enTransicion = false;
+
+        if (pantallaNegra != null) pantallaNegra.color = new Color(0, 0, 0, 0);
+        if (txtMensaje1 != null) txtMensaje1.color = new Color(1, 1, 1, 0);
+        if (pantallaNegra != null) pantallaNegra.gameObject.SetActive(false);
+
         CargarProblemas(0);
     }
 
@@ -66,6 +80,8 @@ public class ControladorReto : MonoBehaviour
 
     public void SeleccionarOpcion(int indiceBoton)
     {
+        if (enTransicion) return;
+
         opcionesSeleccionada = indiceBoton;
 
         for (int i = 0; i < botonesOpciones.Length; i++)
@@ -83,24 +99,7 @@ public class ControladorReto : MonoBehaviour
 
     public void VerificarRespuesta()
     {
-        /*if (opcionesSeleccionada == -1) {
-            return;
-        }
-
-        imgFeedBack.gameObject.SetActive(true);
-        ProblemaPython problema = listaProblemas[problemaActualIndice];
-
-        if (opcionesSeleccionada == problema.indiceCorrecto)
-        {
-            imgFeedBack.sprite = problema.feedBackAcierto;
-            aciertos++;
-            ActualizarContadorAciertos();
-            //despues agrego la logica para cambiar de problema
-        }
-        else {
-            imgFeedBack.sprite = problema.feedBackError;
-        }*/
-        if (opcionesSeleccionada == -1) return;
+        if (opcionesSeleccionada == -1 || enTransicion) return;
 
         imgFeedBack.gameObject.SetActive(true);
         ProblemaPython problema = listaProblemas[problemaActualIndice];
@@ -113,6 +112,13 @@ public class ControladorReto : MonoBehaviour
             {
                 aciertos++;
                 ActualizarContadorAciertos();
+            }
+
+            if (aciertos >= 3)
+            {
+                enTransicion = true;
+                StartCoroutine(SecuenciaVictoria());
+                return;
             }
         }
         else
@@ -138,6 +144,7 @@ public class ControladorReto : MonoBehaviour
 
     public void BotonOtroReto()
     {
+        if (enTransicion) return;
         StartCoroutine(RutinaCambioDeReto());
     }
 
@@ -156,5 +163,39 @@ public class ControladorReto : MonoBehaviour
         {
             CargarProblemas(siguienteIndice);
         }
+    }
+
+    private IEnumerator SecuenciaVictoria()
+    {
+        pantallaNegra.gameObject.SetActive(true);
+
+        float t = 0;
+        while (t < 1.5f)
+        {
+            t += Time.unscaledDeltaTime;
+            pantallaNegra.color = new Color(0, 0, 0, t / 1.5f);
+            yield return null;
+        }
+
+        t = 0;
+        while (t < 1f)
+        {
+            t += Time.unscaledDeltaTime;
+            txtMensaje1.color = new Color(1, 1, 1, t);
+            yield return null;
+        }
+
+        yield return new WaitForSecondsRealtime(5.5f);
+
+        t = 0;
+        while (t < 1f)
+        {
+            t += Time.unscaledDeltaTime;
+            txtMensaje1.color = new Color(1, 1, 1, 1 - t);
+            yield return null;
+        }
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(nombreSiguienteEscena);
     }
 }

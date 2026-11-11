@@ -1,8 +1,8 @@
 using UnityEngine;
+using System.Collections;
 
 public class TerminalRetoFinal : MonoBehaviour
 {
-
     [Header("Interfaz y referencias")]
     public GameObject panelSistemaArranque;
     public GameObject indicadorTecla;
@@ -10,25 +10,33 @@ public class TerminalRetoFinal : MonoBehaviour
     [Header("Configuracion")]
     public KeyCode teclaInter = KeyCode.Z;
     [Tooltip("Cantidad de cartas necesarias para activar el retoo")]
-    public int cartasRequeridas = 1; //Despues cambio a 7
+    public int cartasRequeridas = 7; //Despues cambio a 7
+
+    [Header("Animacion del Panel")]
+    public RectTransform panelRect;
+    public float duracionAnimacion = 0.4f;
+    public Vector2 posicionCentro = new Vector2(0, 0);
+    public Vector2 posicionAbajo = new Vector2(0, -1500);
 
     private bool jugadorEnRango = false;
     private bool cumpleRequisito = false;
-
     private bool menuAbierto = false;
+    private Coroutine animacionActual;
 
     void Start()
     {
         if (indicadorTecla != null) indicadorTecla.SetActive(false);
+        if (panelRect != null) panelRect.anchoredPosition = posicionAbajo;
         if (panelSistemaArranque != null) panelSistemaArranque.SetActive(false);
     }
 
     void Update()
     {
-        if (menuAbierto == false && jugadorEnRango && cumpleRequisito && Input.GetKeyDown(teclaInter))
+        if (menuAbierto == false && jugadorEnRango && cumpleRequisito && Input.GetKeyDown(teclaInter) && animacionActual == null)
         {
             AbrirSistemaReto();
-        } else if (menuAbierto == true && Input.GetKeyDown(teclaInter))
+        }
+        else if (menuAbierto == true && Input.GetKeyDown(teclaInter) && animacionActual == null)
         {
             CerrarSistemaReto();
         }
@@ -41,12 +49,43 @@ public class TerminalRetoFinal : MonoBehaviour
         panelSistemaArranque.SetActive(true);
         Debug.Log("La tecla Z fue presionada y la funcion se ejecuto");
         Time.timeScale = 0f; //lo uso para pausar el jego
+        animacionActual = StartCoroutine(AnimarPanel(posicionCentro, false));
     }
 
-    public void CerrarSistemaReto() {
+    public void CerrarSistemaReto()
+    {
         menuAbierto = false;
-        panelSistemaArranque.SetActive(false);
         Time.timeScale = 1f; //lo uso para reanudar el juego
+
+        if (jugadorEnRango && cumpleRequisito && indicadorTecla != null)
+        {
+            indicadorTecla.SetActive(true);
+        }
+
+        animacionActual = StartCoroutine(AnimarPanel(posicionAbajo, true));
+    }
+
+    private IEnumerator AnimarPanel(Vector2 posicionDestino, bool apagarAlTerminar)
+    {
+        Vector2 posicionInicial = panelRect.anchoredPosition;
+        float tiempoPasado = 0f;
+
+        while (tiempoPasado < duracionAnimacion)
+        {
+            tiempoPasado += Time.unscaledDeltaTime;
+            float porcentaje = tiempoPasado / duracionAnimacion;
+            float curva = Mathf.SmoothStep(0f, 1f, porcentaje);
+            panelRect.anchoredPosition = Vector2.Lerp(posicionInicial, posicionDestino, curva);
+            yield return null;
+        }
+
+        panelRect.anchoredPosition = posicionDestino;
+        animacionActual = null;
+
+        if (apagarAlTerminar && panelSistemaArranque != null)
+        {
+            panelSistemaArranque.SetActive(false);
+        }
     }
 
     private bool JugadorTieneCartasSuficientes()
@@ -69,12 +108,13 @@ public class TerminalRetoFinal : MonoBehaviour
         {
             jugadorEnRango = true;
             cumpleRequisito = JugadorTieneCartasSuficientes();
-            if (cumpleRequisito && indicadorTecla != null)
+            if (cumpleRequisito && indicadorTecla != null && !menuAbierto)
             {
                 indicadorTecla.SetActive(true);
             }
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
