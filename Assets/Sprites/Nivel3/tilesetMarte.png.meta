@@ -1,0 +1,1378 @@
+fileFormatVersion: 2
+guid: 0e2a01b4c5bdccb4c89ea5580acabcf5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4573393331219129729
+    second: tilesetMarte_0
+  - first:
+      213: 6177001860197024018
+    second: tilesetMarte_1
+  - first:
+      213: 2903058630514839747
+    second: tilesetMarte_2
+  - first:
+      213: 6085626686361653236
+    second: tilesetMarte_3
+  - first:
+      213: -7430068192288381749
+    second: tilesetMarte_4
+  - first:
+      213: -1298647984018738447
+    second: tilesetMarte_5
+  - first:
+      213: 4090650550013800783
+    second: tilesetMarte_6
+  - first:
+      213: 913281296413623202
+    second: tilesetMarte_7
+  - first:
+      213: 5130142194018786850
+    second: tilesetMarte_8
+  - first:
+      213: -7654174790528216899
+    second: tilesetMarte_9
+  - first:
+      213: 3108378393307593616
+    second: tilesetMarte_10
+  - first:
+      213: -7601836288987391128
+    second: tilesetMarte_11
+  - first:
+      213: -7826213320050689598
+    second: tilesetMarte_12
+  - first:
+      213: -8221940795112058451
+    second: tilesetMarte_13
+  - first:
+      213: -1969609404777022425
+    second: tilesetMarte_14
+  - first:
+      213: 2220458472716559107
+    second: tilesetMarte_15
+  - first:
+      213: 6494817345580977732
+    second: tilesetMarte_16
+  - first:
+      213: 6990774495100358791
+    second: tilesetMarte_17
+  - first:
+      213: -6078456233822681090
+    second: tilesetMarte_18
+  - first:
+      213: -6862090615884802755
+    second: tilesetMarte_19
+  - first:
+      213: 3139100036291961745
+    second: tilesetMarte_20
+  - first:
+      213: 1857531546377666190
+    second: tilesetMarte_21
+  - first:
+      213: 2417331001652543598
+    second: tilesetMarte_22
+  - first:
+      213: -6007476542589875828
+    second: tilesetMarte_23
+  - first:
+      213: -6520015830851893861
+    second: tilesetMarte_24
+  - first:
+      213: -2272664893223745818
+    second: tilesetMarte_25
+  - first:
+      213: 5806286412400821076
+    second: tilesetMarte_26
+  - first:
+      213: -2565473241328754354
+    second: tilesetMarte_27
+  - first:
+      213: -3130826005457426207
+    second: tilesetMarte_28
+  - first:
+      213: 2864820546706442864
+    second: tilesetMarte_29
+  - first:
+      213: -1977183946202536224
+    second: tilesetMarte_30
+  - first:
+      213: 4787174593422103562
+    second: tilesetMarte_31
+  - first:
+      213: 7437100383119623559
+    second: tilesetMarte_32
+  - first:
+      213: 3799826417028867484
+    second: tilesetMarte_33
+  - first:
+      213: 6429559202450940044
+    second: tilesetMarte_34
+  - first:
+      213: -1059685441124777602
+    second: tilesetMarte_35
+  - first:
+      213: 4527254187829027832
+    second: tilesetMarte_36
+  - first:
+      213: -6499684414576247229
+    second: tilesetMarte_37
+  - first:
+      213: -4090657254654835673
+    second: tilesetMarte_38
+  - first:
+      213: -2486795362836978762
+    second: tilesetMarte_39
+  - first:
+      213: -3911077041531368230
+    second: tilesetMarte_40
+  - first:
+      213: -2415449239295302844
+    second: tilesetMarte_41
+  - first:
+      213: 6292423309661283084
+    second: tilesetMarte_42
+  - first:
+      213: 8902555491140153293
+    second: tilesetMarte_43
+  - first:
+      213: -6691868183861531133
+    second: tilesetMarte_44
+  - first:
+      213: -7283158048043447184
+    second: tilesetMarte_45
+  - first:
+      213: 62544958458284721
+    second: tilesetMarte_46
+  - first:
+      213: -3190288358809467019
+    second: tilesetMarte_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tilesetMarte_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 479
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185e47df005f77f30800000000000000
+      internalID: 4573393331219129729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 479
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21188f5f67e19b550800000000000000
+      internalID: 6177001860197024018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_2
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 479
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c018f1817cb94820800000000000000
+      internalID: 2903058630514839747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_3
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 480
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff493c6a3d747450800000000000000
+      internalID: 6085626686361653236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_4
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 482
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4e8b5685813e890800000000000000
+      internalID: -7430068192288381749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 480
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f239400a864afde0800000000000000
+      internalID: -1298647984018738447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_6
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 479
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4134d58009e4c830800000000000000
+      internalID: 4090650550013800783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_7
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 479
+        width: 34
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a30eb41080acac00800000000000000
+      internalID: 913281296413623202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 415
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e9bb1152de13740800000000000000
+      internalID: 5130142194018786850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_9
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 415
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0d0d1e498e6c590800000000000000
+      internalID: -7654174790528216899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_10
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 415
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09b39980ead232b20800000000000000
+      internalID: 3108378393307593616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_11
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 415
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b9b32eb2ad08690800000000000000
+      internalID: -7601836288987391128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_12
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 415
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c9b2f15374b36390800000000000000
+      internalID: -7826213320050689598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_13
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 415
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da19d07986cc5ed80800000000000000
+      internalID: -8221940795112058451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_14
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 415
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c3ff98eaa8aa4e0800000000000000
+      internalID: -1969609404777022425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_15
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 415
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303e6c86737a0de10800000000000000
+      internalID: 2220458472716559107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 351
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e466cf6f9322a50800000000000000
+      internalID: 6494817345580977732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 351
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78051555d58340160800000000000000
+      internalID: 6990774495100358791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_18
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 351
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef78d38a24cf4aba0800000000000000
+      internalID: -6078456233822681090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_19
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 351
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3515a711f4f4c0a0800000000000000
+      internalID: -6862090615884802755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_20
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 351
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1932991f9d2509b20800000000000000
+      internalID: 3139100036291961745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_21
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 351
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e3cec891747c910800000000000000
+      internalID: 1857531546377666190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_22
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 351
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e600a0a0db51c8120800000000000000
+      internalID: 2417331001652543598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_23
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 351
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89407ad9e721aca0800000000000000
+      internalID: -6007476542589875828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95462875204485a0800000000000000
+      internalID: -6520015830851893861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_25
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6c5e9125fd570e0800000000000000
+      internalID: -2272664893223745818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_26
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4530453aab2149050800000000000000
+      internalID: 5806286412400821076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_27
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4164d1fdab956cd0800000000000000
+      internalID: -2565473241328754354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_28
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e8a72bf5521d84d0800000000000000
+      internalID: -3130826005457426207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_29
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07a8da7db13e1c720800000000000000
+      internalID: 2864820546706442864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_30
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e62efe2da1af84e0800000000000000
+      internalID: -1977183946202536224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_31
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 287
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0413bedde57f6240800000000000000
+      internalID: 4787174593422103562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 223
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78544ce1563e53760800000000000000
+      internalID: 7437100383119623559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_33
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 223
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c95a6237ef1bbb430800000000000000
+      internalID: 3799826417028867484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_34
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 223
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c80ae6487026a3950800000000000000
+      internalID: 6429559202450940044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_35
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 223
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71ca1ca4bd3b41f0800000000000000
+      internalID: -1059685441124777602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_36
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 223
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f3e27982b904de30800000000000000
+      internalID: 4527254187829027832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_37
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 223
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e3a05367b7cc5a0800000000000000
+      internalID: -6499684414576247229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_38
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 223
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7248c6e66e01b37c0800000000000000
+      internalID: -4090657254654835673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_39
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 223
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b363090bc02d7dd0800000000000000
+      internalID: -2486795362836978762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adc465a072019b9c0800000000000000
+      internalID: -3911077041531368230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_41
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 159
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443e0d6e6b99a7ed0800000000000000
+      internalID: -2415449239295302844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_42
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 159
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c03afb459ad235750800000000000000
+      internalID: 6292423309661283084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_43
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 127
+        width: 93
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcfac9a2d0b3c8b70800000000000000
+      internalID: 8902555491140153293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_44
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 159
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30ee1318755b123a0800000000000000
+      internalID: -6691868183861531133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_45
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 159
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07cc757d7560dea90800000000000000
+      internalID: -7283158048043447184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_46
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 159
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bac56fee443ed000800000000000000
+      internalID: 62544958458284721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesetMarte_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 97
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 577091af3a1d9b3d0800000000000000
+      internalID: -3190288358809467019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tilesetMarte_0: 4573393331219129729
+      tilesetMarte_1: 6177001860197024018
+      tilesetMarte_10: 3108378393307593616
+      tilesetMarte_11: -7601836288987391128
+      tilesetMarte_12: -7826213320050689598
+      tilesetMarte_13: -8221940795112058451
+      tilesetMarte_14: -1969609404777022425
+      tilesetMarte_15: 2220458472716559107
+      tilesetMarte_16: 6494817345580977732
+      tilesetMarte_17: 6990774495100358791
+      tilesetMarte_18: -6078456233822681090
+      tilesetMarte_19: -6862090615884802755
+      tilesetMarte_2: 2903058630514839747
+      tilesetMarte_20: 3139100036291961745
+      tilesetMarte_21: 1857531546377666190
+      tilesetMarte_22: 2417331001652543598
+      tilesetMarte_23: -6007476542589875828
+      tilesetMarte_24: -6520015830851893861
+      tilesetMarte_25: -2272664893223745818
+      tilesetMarte_26: 5806286412400821076
+      tilesetMarte_27: -2565473241328754354
+      tilesetMarte_28: -3130826005457426207
+      tilesetMarte_29: 2864820546706442864
+      tilesetMarte_3: 6085626686361653236
+      tilesetMarte_30: -1977183946202536224
+      tilesetMarte_31: 4787174593422103562
+      tilesetMarte_32: 7437100383119623559
+      tilesetMarte_33: 3799826417028867484
+      tilesetMarte_34: 6429559202450940044
+      tilesetMarte_35: -1059685441124777602
+      tilesetMarte_36: 4527254187829027832
+      tilesetMarte_37: -6499684414576247229
+      tilesetMarte_38: -4090657254654835673
+      tilesetMarte_39: -2486795362836978762
+      tilesetMarte_4: -7430068192288381749
+      tilesetMarte_40: -3911077041531368230
+      tilesetMarte_41: -2415449239295302844
+      tilesetMarte_42: 6292423309661283084
+      tilesetMarte_43: 8902555491140153293
+      tilesetMarte_44: -6691868183861531133
+      tilesetMarte_45: -7283158048043447184
+      tilesetMarte_46: 62544958458284721
+      tilesetMarte_47: -3190288358809467019
+      tilesetMarte_5: -1298647984018738447
+      tilesetMarte_6: 4090650550013800783
+      tilesetMarte_7: 913281296413623202
+      tilesetMarte_8: 5130142194018786850
+      tilesetMarte_9: -7654174790528216899
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
