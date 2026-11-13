@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
             //Nota para mi: como el personaje lo tengi escalado a 4, multiplico por 4 para que no se vea chiquito en el eje x
         }
 
-
+        //
 
         if (isGrounded || isClimbing)
         {
