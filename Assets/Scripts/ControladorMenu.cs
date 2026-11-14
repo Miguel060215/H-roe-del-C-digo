@@ -11,7 +11,7 @@ public class ControladorMenu : MonoBehaviour
     [Header("Configuracion de animacion")]
     public float tiempoAnimacion = 0.5f;
     public Vector2 posicionOculta = new Vector2(0, -2000f);
-    public Vector2 posicionVisible = new Vector2(0, 0);
+    public Vector2 posicionVisible = new Vector2(0, 0);//
 
 
     [Header("Referencias UI")]
