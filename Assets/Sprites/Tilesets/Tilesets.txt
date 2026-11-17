@@ -1,0 +1,2 @@
+esta carpeta almacena las paletas que se usan en el tilepalete, al igual que carpetas que contienen los tiles individuales de cada tileset.
+NOTA IMPORTANTE: al crear una Nueva paleta, crear una carpeta que almacene la imagen recortada y los tiles generados al crear la paleta, como se observa por elemplo en las carpetas llamadas TilesetAguaNivel1, las paletas pueden quedar almacenadas en esta carpeta sin problema.

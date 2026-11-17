@@ -1,0 +1,1 @@
+Materiales necesarios para crear el nivel 3, tilesets, imagenes para el fondo, imagenes para el paralax.

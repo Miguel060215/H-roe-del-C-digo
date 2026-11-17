@@ -1,0 +1,1 @@
+Esta carpeta contiene los recursos necesarios para el menu de cartas interactivos dentro de cada nivel, son en su mayoria imagenes que funcionan como botones.
