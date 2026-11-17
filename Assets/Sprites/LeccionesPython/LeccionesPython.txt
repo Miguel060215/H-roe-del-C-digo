@@ -1,0 +1,1 @@
+Esta carpeta contiene todos los recursos necesarios para que funcione el panel de los retos finales, cada carpeta contiene sub carpetas que dejan claro cual es su proposito dentro del canvas de los niveles.

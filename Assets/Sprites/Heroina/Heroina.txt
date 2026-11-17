@@ -1,0 +1,1 @@
+Se deja en los archivos del juego por si en algun futuro se decide agregar como personaje jugable o como npc. esta carpeta contiene una gran cantidad de animaciones para la que iba a ser la personaje principal del juego.
