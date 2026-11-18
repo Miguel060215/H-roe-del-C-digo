@@ -8464,7 +8464,7 @@ MonoBehaviour:
   - {fileID: 4162890440815191036, guid: 4412b8e8dcb4397469848d60f0ad760b, type: 3}
   pantallaNegra: {fileID: 50201125}
   txtMensaje1: {fileID: 133650868}
-  nombreSiguienteEscena: Nivel2
+  nombreSiguienteEscena: Nivel3
   listaProblemas:
   - imagenProblema: {fileID: -6028864087210755613, guid: de6ff6951c2635d43bc030543e5d5638, type: 3}
     imagenesOpciones:
@@ -818268,7 +818268,7 @@ MonoBehaviour:
   panelSistemaArranque: {fileID: 179448198}
   indicadorTecla: {fileID: 496551652}
   teclaInter: 122
-  cartasRequeridas: 0
+  cartasRequeridas: 7
   panelRect: {fileID: 179448201}
   duracionAnimacion: 0.6
   posicionCentro: {x: 0, y: 0}
