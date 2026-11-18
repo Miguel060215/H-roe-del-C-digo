@@ -1,0 +1,12 @@
+Reto 01: correcta = C
+Reto 02: correcta = A
+Reto 03: correcta = D
+Reto 04: correcta = B
+Reto 05: correcta = D
+Reto 06: correcta = B
+Reto 07: correcta = C
+Reto 08: correcta = A
+Reto 09: correcta = A
+Reto 10: correcta = C
+Reto 11: correcta = B
+Reto 12: correcta = D
