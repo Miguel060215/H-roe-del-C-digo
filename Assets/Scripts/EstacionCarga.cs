@@ -1,14 +1,17 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Controla la interaccion con la estacion de carga, ejecutando una secuencia animada que inmoviliza, oculta y restaura al maximo la salud del jugador.
+/// </summary>
 public class EstacionCarga : MonoBehaviour
 {
     [Header("Configuración")]
-    public float duracionAnimacion = 2f; //Ajusto aqui cuando vea la duracion de mi animacion de subir vida al maximoo
-    public KeyCode teclaInteraccion = KeyCode.Z; //la tecla para interactuar con la base de curacon
+    public float duracionAnimacion = 2f; // Tiempo en segundos que dura el ciclo de recarga antes de restaurar la salud y el control
+    public KeyCode teclaInteraccion = KeyCode.Z;
 
     private bool jugadorCerca = false;
-    private bool curando = false;
+    private bool curando = false; // Bandera que evita reiniciar la rutina de curacion mientras ya se encuentra en ejecucion
     private GameObject jugadorObjeto;
     private Animator animatorBase;
     public GameObject indicadorTecla;
@@ -17,15 +20,19 @@ public class EstacionCarga : MonoBehaviour
     public AudioSource fuenteAudio;
     public AudioClip sonidoRecarga;
 
-
+    /// <summary>
+    /// Obtiene la referencia al componente Animator de la estacion al iniciar la escena.
+    /// </summary>
     void Start()
     {
         animatorBase = GetComponent<Animator>();
-    }  
+    }
 
+    /// <summary>
+    /// Detecta la pulsacion de la tecla de interaccion cuando el jugador esta dentro del rango y no hay una recarga activa.
+    /// </summary>
     void Update()
     {
-        
         if (jugadorCerca && !curando && Input.GetKeyDown(teclaInteraccion))
         {
             StartCoroutine(RutinaCuracion());
@@ -36,6 +43,9 @@ public class EstacionCarga : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Muestra el indicador visual y almacena la referencia del jugador al ingresar en el area de la estacion.
+    /// </summary>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -43,10 +53,12 @@ public class EstacionCarga : MonoBehaviour
             indicadorTecla.SetActive(true);
             jugadorCerca = true;
             jugadorObjeto = collision.gameObject;
-
         }
     }
 
+    /// <summary>
+    /// Oculta el indicador visual y limpia la referencia del jugador al abandonar el area de interaccion.
+    /// </summary>
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -57,34 +69,32 @@ public class EstacionCarga : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Ejecuta la secuencia completa de recarga: detiene y oculta al jugador, activa la animacion de la base, restaura la salud y devuelve el control.
+    /// </summary>
     private IEnumerator RutinaCuracion()
     {
         curando = true;
 
-        // 1. Obtener los componentes de Otix
         Player scriptPlayer = jugadorObjeto.GetComponent<Player>();
         SaludJugador scriptSalud = jugadorObjeto.GetComponent<SaludJugador>();
         SpriteRenderer spriteOtix = jugadorObjeto.GetComponent<SpriteRenderer>();
         Rigidbody2D rbOtix = jugadorObjeto.GetComponent<Rigidbody2D>();
 
-        // 2. Frenar a Otix, bloquear sus controles y volverlo INVISIBLE
+        // Detiene la velocidad fisica y deshabilita el renderizado para simular que el personaje ingresa a la estacion
         if (scriptPlayer != null) scriptPlayer.puedeMoverse = false;
-        if (rbOtix != null) rbOtix.linearVelocity = Vector2.zero; // Frenado en seco
+        if (rbOtix != null) rbOtix.linearVelocity = Vector2.zero;
         if (spriteOtix != null) spriteOtix.enabled = false;
 
-        // 3. Activar la animación de la base curando
         animatorBase.SetBool("estaCurando", true);
 
-        // 4. Esperar los segundos que dura tu animación
         yield return new WaitForSeconds(duracionAnimacion);
 
-        // 5. Rellenar las vidas al 100%
         if (scriptSalud != null) scriptSalud.CurarAlMaximo();
 
-        // 6. Regresar la animación de la base a Inactiva (sola)
         animatorBase.SetBool("estaCurando", false);
 
-        // 7. Volver a hacer visible a Otix y devolverle el control
+        // Restaura la visibilidad del sprite y habilita nuevamente el desplazamiento del jugador
         if (spriteOtix != null) spriteOtix.enabled = true;
         if (scriptPlayer != null) scriptPlayer.puedeMoverse = true;
 

@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// Controla el movimiento horizontal, salto, doble salto, escalada, animaciones, efectos de sonido y puntos de reaparicion del jugador.
+/// </summary>
 public class Player : MonoBehaviour
 {
-    //variables //
     public float speed = 5;
     private Rigidbody2D rb2D;
     private float move;
@@ -13,46 +15,44 @@ public class Player : MonoBehaviour
     public float groundRadius = 0.1f;
     public LayerMask groundLayer;
 
-    [HideInInspector] public Vector3 ultimaPosicionSegura; // Variable para almacenar la última posición segura del jugador
+    [HideInInspector] public Vector3 ultimaPosicionSegura; // Registra la ultima coordenada estable en tierra firme para reubicar al jugador tras caer en una trampa
 
-
-    //variables para deteccion de paredes
     [Header("Wall Check")]
     public Transform wallCheck;
     public float wallRadius = 0.2f;
     private bool isTouchingWall;
 
-    // Variables para la escalera
     [Header("Climbing")]
     public float climbSpeed = 5f;
     private bool isClimbing;
     private float verticalInput;
-    private float initialGravity;
+    private float initialGravity; // Almacena la escala de gravedad original para restaurarla al salir de una escalera
     private Animator animator;
 
     [Header("Control de Estado")]
-    public bool puedeMoverse = true; // Variable para controlar si el jugador puede moverse
+    public bool puedeMoverse = true;
 
     [Header("Audio")]
     public AudioSource fuenteCaminar;
     public AudioSource fuenteEfectos;
     public AudioClip clipSalto;
+
     [Header("Sistema de Reaparición")]
-    public static Vector3 puntoReaparicion; // Variable estática para almacenar el punto de reaparición
+    public static Vector3 puntoReaparicion; // Coordenada global persistente donde reaparece el jugador tras morir
     public static bool hayPuntoGuardado = false;
 
     [Header("Doble Salto")]
-    public static bool tieneDobleSalto = false;
+    public static bool tieneDobleSalto = false; // Bandera estatica que indica si el jugador ya desbloqueo la habilidad en la partida
     private bool puedeDobleSalto = false;
 
+    /// <summary>
+    /// Inicializa las referencias de fisica y animacion, guarda la gravedad base y traslada al jugador al punto de control si existe uno activo.
+    /// </summary>
     void Start()
     {
-
-
-        //Aqui dentro se ejecutara el codigo al iniciar el juego
-        // ultimaPosicionSegura = transform.position; // Inicializar la última posición segura al inicio del juego
+        // ultimaPosicionSegura = transform.position;
         rb2D = GetComponent<Rigidbody2D>();
-        initialGravity = rb2D.gravityScale; // Guardar la gravedad inicial
+        initialGravity = rb2D.gravityScale;
         animator = GetComponent<Animator>();
         if (hayPuntoGuardado)
         {
@@ -60,10 +60,11 @@ public class Player : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// Procesa las entradas del usuario, actualiza velocidades de desplazamiento y salto, sincroniza el audio de pasos y actualiza los parametros del Animator.
+    /// </summary>
     void Update()
     {
-
         if (!puedeMoverse)
         {
             rb2D.linearVelocity = new Vector2(0, rb2D.linearVelocity.y);
@@ -72,9 +73,8 @@ public class Player : MonoBehaviour
             animator.SetBool("enSuelo", true);
             return;
         }
-        move = Input.GetAxisRaw("Horizontal");//Uniti tiene definido la palabra Horizontal para el movimiento horizontal "a","d" y "<",">"
 
-        // Capturar entrada vertical para la escalera
+        move = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
         if (!isClimbing)
@@ -83,17 +83,14 @@ public class Player : MonoBehaviour
         }
         else
         {
-            // Movimiento libre en X y velocidad vertical controlada en la escalera
             rb2D.linearVelocity = new Vector2(move * speed, verticalInput * climbSpeed);
         }
 
         if (move != 0)
         {
-            transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 4, 4);
-            //Nota para mi: como el personaje lo tengi escalado a 4, multiplico por 4 para que no se vea chiquito en el eje x
+            // Invierte el signo en el eje X manteniendo la magnitud base de escala (4) para orientar el sprite segun la direccion de avance
+            transform.localScale = new Vector3(Mathf.Sgn(move) * Mathf.Abs(transform.localScale.x), 4, 4);
         }
-
-        //
 
         if (isGrounded || isClimbing)
         {
@@ -104,16 +101,14 @@ public class Player : MonoBehaviour
         {
             if (isGrounded)
             {
-                // Salto normal desde el suelo
                 rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
                 fuenteEfectos.PlayOneShot(clipSalto, 0.8f);
             }
             else if (!isGrounded && puedeDobleSalto && tieneDobleSalto)
             {
-                // ¡Doble salto en el aire!
                 rb2D.linearVelocity = new Vector2(rb2D.linearVelocity.x, jumpForce);
                 fuenteEfectos.PlayOneShot(clipSalto, 0.8f);
-                puedeDobleSalto = false; // Consumimos el doble salto hasta volver a tocar tierra
+                puedeDobleSalto = false; // Consume el salto adicional hasta que el jugador vuelva a tocar el suelo o una escalera
             }
         }
 
@@ -128,33 +123,33 @@ public class Player : MonoBehaviour
             fuenteCaminar.Stop();
         }
 
-
         animator.SetFloat("Speed", Mathf.Abs(move));
         animator.SetFloat("SpeedY", rb2D.linearVelocity.y);
         animator.SetBool("enSuelo", isGrounded);
         animator.SetBool("empuje", pushing);
-
-
     }
 
+    /// <summary>
+    /// Evalua mediante superposicion circular la deteccion de suelo y paredes en intervalos fijos de fisica, actualizando la ultima posicion segura.
+    /// </summary>
     private void FixedUpdate()
     {
-        //Aqui dentro se ejecutara el codigo cada vez que se actualice la fisica del juego
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundLayer);
 
         if (isGrounded)
         {
-            ultimaPosicionSegura = transform.position; // actualiza la uultima posición segura cuando el jugador este en el suelo
+            ultimaPosicionSegura = transform.position;
         }
 
         if (wallCheck != null)
         {
             isTouchingWall = Physics2D.OverlapCircle(wallCheck.position, wallRadius, groundLayer);
         }
-
-
     }
 
+    /// <summary>
+    /// Habilita el modo de escalada y anula la gravedad al entrar en contacto con una escalera.
+    /// </summary>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
@@ -165,6 +160,9 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Desactiva el modo de escalada y restaura la gravedad original al abandonar el area de la escalera.
+    /// </summary>
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Ladder"))
@@ -174,16 +172,25 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Determina si el personaje se encuentra descendiendo en el aire sin contacto con el suelo.
+    /// </summary>
     public bool EstaCallendo()
     {
         return rb2D.linearVelocity.y < -0.1f && !isGrounded;
     }
 
+    /// <summary>
+    /// Inicia una corrutina que suspende temporalmente el control de movimiento del jugador.
+    /// </summary>
     public void BloquarControles(float tiempo)
     {
         StartCoroutine(RutinaBloqueo(tiempo));
     }
 
+    /// <summary>
+    /// Deshabilita el movimiento durante los segundos indicados y lo reactiva unicamente si el jugador sigue con vida.
+    /// </summary>
     private IEnumerator RutinaBloqueo(float tiempo)
     {
         puedeMoverse = false;
@@ -194,8 +201,8 @@ public class Player : MonoBehaviour
         {
             puedeMoverse = true;
         }
-
     }
+
     /*private void OnCollisionEnter2D(Collision2D collision)
     {
         

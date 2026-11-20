@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Gestiona la recoleccion del item que desbloquea la habilidad de doble salto del jugador, activando su animacion y efectos sonoros correspondientes.
+/// </summary>
 public class ObjetoDobleSalto : MonoBehaviour
 {
     [Header("Audio")]
@@ -7,10 +10,13 @@ public class ObjetoDobleSalto : MonoBehaviour
     [Range(0f, 1f)] public float volumen = 1f;
 
     [Header("Animación de Otix")]
-    public string nombreAnimacionJugador = "RecoleccionItem2"; // El nombre de la animación en el Animator de Otix
+    public string nombreAnimacionJugador = "RecoleccionItem2"; // Nombre exacto del estado en el Animator del jugador que se reproducira al obtener el objeto
 
-    private bool yaRecogido = false;
+    private bool yaRecogido = false; // Bandera que previene ejecuciones multiples durante el retardo previo a la destruccion del objeto
 
+    /// <summary>
+    /// Detecta el contacto con el jugador, habilita permanentemente el doble salto, bloquea temporalmente los controles y oculta el objeto antes de destruirlo.
+    /// </summary>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (yaRecogido) return;
@@ -31,14 +37,13 @@ public class ObjetoDobleSalto : MonoBehaviour
                     AudioSource.PlayClipAtPoint(sonidoRecogido, transform.position, volumen);
                 }
 
-                // Buscamos el Animator en el jugador (Otix) y disparamos su animación
                 Animator animJugador = collision.GetComponent<Animator>();
                 if (animJugador != null)
                 {
                     animJugador.Play(nombreAnimacionJugador);
                 }
 
-                // Desactivamos el coleccionable y lo destruimos en 2 segundos
+                // Desactiva los componentes visuales y fisicos de inmediato mientras transcurre el tiempo antes de eliminar el GameObject
                 GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<Collider2D>().enabled = false;
 

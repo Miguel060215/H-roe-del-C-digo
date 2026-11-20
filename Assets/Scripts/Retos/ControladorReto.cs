@@ -4,6 +4,9 @@ using System.Collections;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Estructura de datos que almacena los recursos graficos y la respuesta correcta de cada reto de Python.
+/// </summary>
 [System.Serializable]
 public class ProblemaPython
 {
@@ -19,6 +22,9 @@ public class ProblemaPython
     public Sprite feedBackAcierto;
 }
 
+/// <summary>
+/// Controla el flujo completo de los retos de programacion, validando respuestas, aciertos y la transicion entre niveles.
+/// </summary>
 public class ControladorReto : MonoBehaviour
 {
     [Header("Referencias")]
@@ -40,13 +46,16 @@ public class ControladorReto : MonoBehaviour
 
     private int problemaActualIndice = 0;
     private int aciertos = 0;
-    private int opcionesSeleccionada = -1;
-    private bool enTransicion = false;
+    private int opcionesSeleccionada = -1; // -1 indica que el jugador aun no ha seleccionado ninguna opcion
+    private bool enTransicion = false; // Bloquea las interacciones mientras se ejecuta la cinematica de victoria
 
     [Header("UI elementos")]
     public GameObject panelBlanco;
     public CanvasGroup grupoInteractivo;
 
+    /// <summary>
+    /// Reinicia el progreso del reto y oculta los elementos de transicion cada vez que se activa el panel.
+    /// </summary>
     void OnEnable()
     {
         aciertos = 0;
@@ -59,6 +68,9 @@ public class ControladorReto : MonoBehaviour
         CargarProblemas(0);
     }
 
+    /// <summary>
+    /// Carga en la interfaz las imagenes del problema y las opciones correspondientes al indice recibido.
+    /// </summary>
     public void CargarProblemas(int indice)
     {
         problemaActualIndice = indice;
@@ -78,6 +90,9 @@ public class ControladorReto : MonoBehaviour
         ActualizarContadorAciertos();
     }
 
+    /// <summary>
+    /// Registra la opcion elegida por el jugador y aplica un efecto de sombreado en las opciones no seleccionadas.
+    /// </summary>
     public void SeleccionarOpcion(int indiceBoton)
     {
         if (enTransicion) return;
@@ -97,6 +112,9 @@ public class ControladorReto : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Evalua si la opcion seleccionada es correcta, muestra la retroalimentacion y determina si se avanza de reto o se gana el nivel.
+    /// </summary>
     public void VerificarRespuesta()
     {
         if (opcionesSeleccionada == -1 || enTransicion) return;
@@ -129,6 +147,9 @@ public class ControladorReto : MonoBehaviour
         StartCoroutine(RutinaCambioDeReto());
     }
 
+    /// <summary>
+    /// Actualiza la imagen superpuesta del contador visual segun la cantidad actual de aciertos.
+    /// </summary>
     public void ActualizarContadorAciertos()
     {
         if (aciertos == 0)
@@ -142,17 +163,24 @@ public class ControladorReto : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Inicia manualmente la transicion hacia el siguiente problema disponible en la lista.
+    /// </summary>
     public void BotonOtroReto()
     {
         if (enTransicion) return;
         StartCoroutine(RutinaCambioDeReto());
     }
 
+    /// <summary>
+    /// Bloquea temporalmente los controles durante dos segundos en tiempo real antes de cargar el siguiente reto.
+    /// </summary>
     private IEnumerator RutinaCambioDeReto()
     {
         if (grupoInteractivo != null) grupoInteractivo.interactable = false;
         if (panelBlanco != null) panelBlanco.SetActive(true);
 
+        // Se usa WaitForSecondsRealtime porque el juego permanece pausado (Time.timeScale = 0)
         yield return new WaitForSecondsRealtime(2f);
 
         if (panelBlanco != null) panelBlanco.SetActive(false);
@@ -165,11 +193,15 @@ public class ControladorReto : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Ejecuta el desvanecimiento de pantalla y mensaje de victoria utilizando tiempo no escalado antes de cargar la siguiente escena.
+    /// </summary>
     private IEnumerator SecuenciaVictoria()
     {
         pantallaNegra.gameObject.SetActive(true);
 
         float t = 0;
+        // unscaledDeltaTime permite animar la interfaz mientras el juego esta pausado
         while (t < 1.5f)
         {
             t += Time.unscaledDeltaTime;
@@ -195,6 +227,7 @@ public class ControladorReto : MonoBehaviour
             yield return null;
         }
 
+        // Limpia las variables estaticas del punto de control antes de cambiar de nivel
         Player.hayPuntoGuardado = false;
         Player.puntoReaparicion = Vector3.zero;
         Time.timeScale = 1f;
