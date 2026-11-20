@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Gestiona la recoleccion del item que desbloquea la habilidad de doble salto del jugador, activando su animacion y efectos sonoros correspondientes.
@@ -13,6 +14,17 @@ public class ObjetoDobleSalto : MonoBehaviour
     public string nombreAnimacionJugador = "RecoleccionItem2"; // Nombre exacto del estado en el Animator del jugador que se reproducira al obtener el objeto
 
     private bool yaRecogido = false; // Bandera que previene ejecuciones multiples durante el retardo previo a la destruccion del objeto
+
+    /// <summary>
+    /// Elimina el objeto de la escena al reaparecer si el jugador ya lo habia recolectado previamente en este nivel.
+    /// </summary>
+    private void Start()
+    {
+        if (Player.tieneDobleSalto && Player.escenaDobleSalto == SceneManager.GetActiveScene().name)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     /// <summary>
     /// Detecta el contacto con el jugador, habilita permanentemente el doble salto, bloquea temporalmente los controles y oculta el objeto antes de destruirlo.
@@ -30,6 +42,7 @@ public class ObjetoDobleSalto : MonoBehaviour
                 yaRecogido = true;
 
                 Player.tieneDobleSalto = true;
+                Player.escenaDobleSalto = SceneManager.GetActiveScene().name;
                 player.BloquarControles(2f);
 
                 if (sonidoRecogido != null)

@@ -105,5 +105,7 @@ public class MenuPausa : MonoBehaviour
 
         Player.hayPuntoGuardado = false;
         Player.puntoReaparicion = Vector3.zero;
+        Player.tieneDobleSalto = false;
+        Player.escenaDobleSalto = "";
     }
 }

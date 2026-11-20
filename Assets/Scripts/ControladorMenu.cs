@@ -81,7 +81,14 @@ public class ControladorMenu : MonoBehaviour
             int indice = i; // Se guarda una copia local del indice para evitar problemas de captura en la expresion lambda
             botonesPestanas[i].onClick.AddListener(() => CambiarCarta(indice));
         }
-        CambiarCarta(0);
+
+        // Actualiza el estado visual inicial de los botones y la vista previa sin reproducir audio al cargar la escena
+        ActualizarSpritesBotones();
+        if (cartasDesbloqueadas[0] && contenidoCartas.Length > 0)
+        {
+            imagenContenidoCentral.sprite = contenidoCartas[0];
+            AjustarImagenAlAncho();
+        }
     }
 
     /// <summary>

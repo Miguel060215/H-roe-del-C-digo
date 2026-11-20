@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Controla el movimiento horizontal, salto, doble salto, escalada, animaciones, efectos de sonido y puntos de reaparicion del jugador.
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
 
     [Header("Doble Salto")]
     public static bool tieneDobleSalto = false; // Bandera estatica que indica si el jugador ya desbloqueo la habilidad en la partida
+    public static string escenaDobleSalto = ""; // Registra el nombre de la escena donde se obtuvo la habilidad para reiniciarla al avanzar de nivel
     private bool puedeDobleSalto = false;
 
     /// <summary>
@@ -50,6 +52,11 @@ public class Player : MonoBehaviour
     /// </summary>
     void Start()
     {
+        if (escenaDobleSalto != SceneManager.GetActiveScene().name)
+        {
+            tieneDobleSalto = false;
+        }
+
         // ultimaPosicionSegura = transform.position;
         rb2D = GetComponent<Rigidbody2D>();
         initialGravity = rb2D.gravityScale;
