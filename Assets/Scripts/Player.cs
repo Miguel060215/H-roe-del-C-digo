@@ -89,7 +89,7 @@ public class Player : MonoBehaviour
         if (move != 0)
         {
             // Invierte el signo en el eje X manteniendo la magnitud base de escala (4) para orientar el sprite segun la direccion de avance
-            transform.localScale = new Vector3(Mathf.Sgn(move) * Mathf.Abs(transform.localScale.x), 4, 4);
+            transform.localScale = new Vector3(Mathf.Sign(move) * Mathf.Abs(transform.localScale.x), 4, 4);
         }
 
         if (isGrounded || isClimbing)
