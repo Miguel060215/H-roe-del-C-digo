@@ -19,8 +19,9 @@ public class HUDCartas : MonoBehaviour
     {
         foreach (int id in cartasRecolectadas)
         {
-            if (id >= 0 && id < animadoresCartas.Length)
+            if (id >= 0 && id < animadoresCartas.Length && animadoresCartas[id] != null)
             {
+                animadoresCartas[id].gameObject.SetActive(true);
                 animadoresCartas[id].enabled = true;
             }
         }
@@ -31,8 +32,9 @@ public class HUDCartas : MonoBehaviour
     /// </summary>
     public void ActivarIcono(int id)
     {
-        if (id >= 0 && id < animadoresCartas.Length)
+        if (id >= 0 && id < animadoresCartas.Length && animadoresCartas[id] != null)
         {
+            animadoresCartas[id].gameObject.SetActive(true);
             animadoresCartas[id].enabled = true;
 
             if (!cartasRecolectadas.Contains(id))
