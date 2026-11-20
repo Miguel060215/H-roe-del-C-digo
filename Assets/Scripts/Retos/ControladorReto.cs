@@ -195,6 +195,8 @@ public class ControladorReto : MonoBehaviour
             yield return null;
         }
 
+        Player.hayPuntoGuardado = false;
+        Player.puntoReaparicion = Vector3.zero;
         Time.timeScale = 1f;
         SceneManager.LoadScene(nombreSiguienteEscena);
     }

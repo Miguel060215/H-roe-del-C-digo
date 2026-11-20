@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
-using UnityEngine.SceneManagement; 
+using UnityEngine.SceneManagement;
 
 public class CinematicaInicio : MonoBehaviour
 {
@@ -64,5 +64,10 @@ public class CinematicaInicio : MonoBehaviour
 
         if (pantallaNegra != null) pantallaNegra.gameObject.SetActive(false);
         if (txtMensajeInicio != null) txtMensajeInicio.gameObject.SetActive(false);
+    }
+
+    public static void ResetearCinematica()
+    {
+        ultimaEscenaReproducida = "";
     }
 }
