@@ -228,8 +228,8 @@ public class ControladorReto : MonoBehaviour
         }
 
         // Limpia las variables estaticas del punto de control antes de cambiar de nivel
-        Player.hayPuntoGuardado = false;
-        Player.puntoReaparicion = Vector3.zero;
+        MenuPausa.ResetearDatosNivel();
+
         Time.timeScale = 1f;
         SceneManager.LoadScene(nombreSiguienteEscena);
     }
