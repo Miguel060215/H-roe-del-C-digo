@@ -8673,7 +8673,7 @@ MonoBehaviour:
   - {fileID: 4162890440815191036, guid: 4412b8e8dcb4397469848d60f0ad760b, type: 3}
   pantallaNegra: {fileID: 50201125}
   txtMensaje1: {fileID: 133650868}
-  nombreSiguienteEscena: Nivel3
+  nombreSiguienteEscena: Nivel2
   listaProblemas:
   - imagenProblema: {fileID: -6028864087210755613, guid: de6ff6951c2635d43bc030543e5d5638, type: 3}
     imagenesOpciones:

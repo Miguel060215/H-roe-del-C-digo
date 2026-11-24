@@ -100,7 +100,7 @@ public class MenuPausa : MonoBehaviour
     /// <summary>
     /// Reinicia las variables estaticas globales de cartas desbloqueadas, iconos del HUD y puntos de control del jugador.
     /// </summary>
-    private void ResetearDatosNivel()
+    public static void ResetearDatosNivel()
     {
         if (ControladorMenu.cartasDesbloqueadas != null)
         {
