@@ -25,19 +25,19 @@ Para evitar fugas de estado al reiniciar niveles, regresar al menú principal o 
 
 1. **Inicio y Menú Principal (`Menu`):** `CinematicaInicio.cs` gestiona la secuencia introductoria y da paso a `SistemaMenu.cs` / `ControladorMenu.cs` para la selección de nivel y consulta del compendio de cartas.
 2. **Exploración y Plataformas (`Nivel1`, `Nivel2`, `Nivel3`):** `Player.cs` controla el movimiento 2D, interacciones y habilidades temporales (`ObjetoDobleSalto.cs`), acompañado por `SeguimientoCamara.cs` y `EfectoParallax.cs`.
-3. **Recolección y Aprendizaje:** Al recoger ítems (`CartaColeccionable.cs`) o interactuar con señalizaciones (`Letrero.cs`), se actualiza el registro del jugador reflejado en `HUDCartas.cs`.
+3. **Recolección y Aprendizaje:** Al recoger ítems (`CartaColeccionable.cs`) se actualiza el registro de cartas reflejado en `HUDCartas.cs` y se desbloquea la lección correspondiente. Los letreros (`Letrero.cs`) solo muestran mensajes contextuales y no modifican dicho registro.
 4. **Evaluación en Terminal (`TerminalRetoFinal.cs` + `ControladorReto.cs`):** Al activar la terminal al final de cada escenario, se despliega la interfaz de retos de Python. Superar los ejercicios desbloquea el avance hacia la siguiente escena.
 
 ---
 
 ## 3. Catálogo de Scripts (`Assets/Scripts/`)
 
-Los 20 scripts del proyecto se dividen en módulos especializados por carpeta:
+Los 21 scripts del proyecto se dividen en módulos especializados por carpeta:
 
 ### A. Módulo de Menús (`Assets/Scripts/Menu/`)
 | Script | Responsabilidad Principal |
 | :--- | :--- |
-| **`SistemaMenu.cs`** | Controla las acciones principales de la interfaz del menú inicial (iniciar partida, selección de niveles, apertura de paneles y salida de la aplicación). |
+| **`SistemaMenu.cs`** | Controla las acciones principales de la interfaz del menú inicial (iniciar partida, selección de niveles y salida de la aplicación); delega la presentación de subpaneles en `ControladorMenu.cs`. |
 
 ### B. Módulo de Retos Educativos (`Assets/Scripts/Retos/`)
 | Script | Responsabilidad Principal |
@@ -74,3 +74,12 @@ Los 20 scripts del proyecto se dividen en módulos especializados por carpeta:
 | **`PuntoControl.cs`** | Activa puntos de guardado (*checkpoints*) intermedios dentro del nivel para reaparecer al jugador sin perder todo el progreso del recorrido. |
 | **`EstacionCarga.cs`** | Punto interactivo o de restauración energética dentro del escenario que recarga el estado del jugador. |
 | **`Teletransportador.cs`** | Traslada al jugador de forma instantánea entre dos coordenadas de la escena o hacia una nueva zona del nivel al interactuar o cruzar el portal. |
+
+---
+
+## 4. Notas de Diseño y Limitaciones Conocidas
+
+* **Ubicación de `ResetearDatosNivel()`:** actualmente reside en `MenuPausa.cs` (clase de interfaz). Como mejora, puede migrarse a una clase de estado de sesión dedicada. Debe verificarse que la ruta de reinicio por derrota (`SaludJugador.cs`) y el fin de nivel invoquen la misma limpieza.
+* **Uso de `Time.timeScale = 0f`:** toda ruta de salida de un reto (cambio de escena, derrota, cierre de terminal) debe restablecer `Time.timeScale = 1f`; centralizarlo en un único gestor reduce el riesgo de congelar el juego.
+* **Convención de nombres:** existe mezcla de inglés y español (`Player.cs`) y de caracteres (`DannoTrampa.cs` frente a `DañoObstaculos.cs`). Se recomienda evitar la `ñ` en nombres de archivo y clase C# y unificar el idioma y el estilo (`PascalCase` para tipos y métodos públicos, `camelCase` para campos).
+* **Separación de menús:** `SistemaMenu.cs` agrupa las acciones globales de la aplicación y `ControladorMenu.cs` la navegación entre subpaneles; sus responsabilidades deben mantenerse delimitadas para evitar solapamientos.

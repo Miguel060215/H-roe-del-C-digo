@@ -46,7 +46,7 @@ URL de producción actual: **[https://mechrobotix.com/heroedelcodigo/](https://m
 ### Paso 3: Subir los archivos a Hostinger (hPanel)
 1. Ingresa al **hPanel de Hostinger** y abre el **Administrador de Archivos** del dominio `mechrobotix.com`.
 2. Navega hasta la carpeta destino: `/public_html/heroedelcodigo/`.
-3. **Limpieza obligatoria:** Elimina los archivos anteriores (`index.html`, `Build/` y `TemplateData/`) antes de subir los nuevos para evitar conflictos entre versiones viejas y nuevas. *(Nota: **no borres** el archivo `.htaccess` si ya existe en esa carpeta).*
+3. **Reemplazo seguro:** Para no dejar el sitio roto durante la subida, sube la nueva compilación a una carpeta temporal (por ejemplo `/public_html/heroedelcodigo_nuevo/`), verifica que cargue e intercambia los nombres de carpeta. Si subes directamente a `/public_html/heroedelcodigo/`, elimina antes `index.html`, `Build/` y `TemplateData/` para no mezclar versiones. *(Nota: **no borres** el archivo `.htaccess`; si usas carpeta temporal, cópialo también).*
 4. Sube el nuevo `index.html`, la carpeta `Build/` y la carpeta `TemplateData/` generados por Unity.
 
 ### Paso 4: Configuración del servidor (`.htaccess`)
@@ -59,6 +59,16 @@ Para que el servidor de Hostinger entregue correctamente el binario de WebAssemb
 ```
 
 *Si el archivo `.htaccess` no existe, créalo directamente desde el Administrador de Archivos de Hostinger y pega esa regla.*
+
+**Control de caché (recomendado):** como *Name Files As Hashes* está desmarcado, los archivos de `Build/` conservan el mismo nombre entre versiones y el navegador podría servir un `.wasm` o `.data` antiguo. Si `mod_headers` está disponible en el hosting, agrega:
+
+```apache
+<IfModule mod_headers.c>
+    <FilesMatch "\.(data|wasm|js)$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
+</IfModule>
+```
 
 ### Paso 5: Verificación y evasión de caché
 1. Abre una ventana de incógnito o realiza una recarga forzada (`Ctrl + Shift + R` en Windows) en `https://mechrobotix.com/heroedelcodigo/`.
@@ -99,7 +109,7 @@ Si en el futuro **Mech Robotix, A.C.** desea incrustar el videojuego dentro de o
 ```html
 <div style="position: relative; width: 100%; max-width: 1280px; margin: 0 auto; aspect-ratio: 16 / 9;">
     <iframe 
-        src="[https://mechrobotix.com/heroedelcodigo/](https://mechrobotix.com/heroedelcodigo/)" 
+        src="https://mechrobotix.com/heroedelcodigo/" 
         title="Héroe del Código - Mech Robotix, A.C."
         style="width: 100%; height: 100%; border: none; display: block;"
         allow="autoplay; fullscreen; gamepad"
