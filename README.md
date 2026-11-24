@@ -13,7 +13,7 @@ Videojuego educativo en 2D desarrollado para **Mech Robotix, A.C.** con el prop�
 * **Arte y Recursos Visuales:** LibreSprite (diseño de personajes pixel-art como *Otix* y la *Heroína*, tilesets ambientales, banners de lecciones e interfaces).
 * **Control de Versiones:** Git y GitHub (flujo colaborativo basado en ramas integradas hacia `main`).
 * **Plataformas de Despliegue:**
-  * **Web (WebGL):** Compilación en HTML5 / WebAssembly alojada en **Hostinger** (`[mechrobotix.com/heroedelcodigo/](https://mechrobotix.com/heroedelcodigo/)`).
+  * **Web (WebGL):** Compilación en HTML5 / WebAssembly alojada en **Hostinger** ([mechrobotix.com/heroedelcodigo/](https://mechrobotix.com/heroedelcodigo/)).
   * **Escritorio:** Ejecutable independiente para Windows (`.exe`).
 
 ---
@@ -29,9 +29,10 @@ Assets/
 ├── Prefab/                   # Objetos reutilizables de escena (Letreros interactivos, ítems, plataformas)
 ├── Resources/                # Recursos de carga dinámica en tiempo de ejecución
 ├── Scenes/                   # Escenas del juego (Menu, Nivel1, Nivel2, Nivel3)
-├── Scripts/                  # Código fuente en C#
-│   ├── Menu/                 # Navegación principal, pausa, cinemática inicial y control de cartas
-│   └── Retos/                # Lógica de terminales de Python, validación de respuestas y transiciones
+├── Scripts/                  # Código fuente en C# (21 scripts)
+│   ├── Menu/                 # SistemaMenu.cs: acciones principales del menú inicial
+│   ├── Retos/                # ControladorReto.cs y TerminalRetoFinal.cs (terminales de Python y validación)
+│   └── (raíz)                # Jugador, cámara, pausa, HUD, cinemática, ControladorMenu y mecánicas de entorno
 ├── Settings/                 # Configuraciones del proyecto, Build Profiles (Web / Windows) y Scene List
 ├── Sprites/                  # Recursos gráficos en pixel-art organizados por función y nivel
 │   ├── ElementosExtra/       # Decoración adicional de entorno
@@ -84,6 +85,11 @@ Antes de iniciar cambios o compilar una nueva versión, asegúrate de guardar tu
    ```bash
    git push
    ```
+
+### 4. Recomendaciones de control de versiones para proyectos Unity
+* Mantén un `.gitignore` para Unity que excluya `Library/`, `Temp/`, `Obj/`, `Logs/`, `UserSettings/` y las carpetas de compilación (`Builds/`).
+* Conserva los archivos `.meta` bajo control de versiones y usa **Force Text** en la serialización de assets para facilitar las fusiones.
+* Evita que dos personas editen la misma escena a la vez y considera **Git LFS** para audio y sprites pesados.
 
 ---
 
