@@ -818070,7 +818070,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1844757173}
         m_TargetAssemblyTypeName: MenuPausa, Assembly-CSharp
         m_MethodName: PausarJuego
         m_Mode: 1
@@ -818921,8 +818921,8 @@ RectTransform:
   - {fileID: 1477453357}
   - {fileID: 859487134}
   - {fileID: 292065835}
-  - {fileID: 1717225052}
   - {fileID: 91649575}
+  - {fileID: 1717225052}
   - {fileID: 179448201}
   - {fileID: 50201124}
   - {fileID: 1464447557}

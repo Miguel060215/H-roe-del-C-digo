@@ -49,6 +49,15 @@ public class MenuPausa : MonoBehaviour
     /// </summary>
     public void PausarJuego()
     {
+        // Si el juego ya esta pausado, reanuda la partida en lugar de abrir el menu de pausa.
+        if (juegoPausado)
+        {
+            ReanudarJuego();
+            return;
+
+        }
+
+
         // Evita abrir el menu de pausa si otro sistema (como la terminal de retos) ya detuvo Time.timeScale
         if (Time.timeScale == 0f) return;
 
