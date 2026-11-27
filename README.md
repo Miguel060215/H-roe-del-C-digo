@@ -1,6 +1,6 @@
 # Héroe del Código
 
-Videojuego educativo en 2D desarrollado para **Mech Robotix, A.C.** con el propósito de enseñar fundamentos de programación en **Python** de forma interactiva. El jugador controla a *Otix* a través de distintos escenarios (Desierto, Tren y Domo en Marte) recolectando cartas de conocimiento, superando obstáculos y resolviendo retos de lógica y sintaxis en terminales de código.
+Videojuego educativo en 2D desarrollado para **Mech Robotix, A.C.** con el propósito de enseñar fundamentos de programación en **Python** de forma interactiva. El jugador controla a *Otix* a través de distintos escenarios (Desierto, Sierra y Domo en Marte) recolectando cartas de conocimiento, superando obstáculos y resolviendo retos de lógica y sintaxis en terminales de código.
 
 🌐 **Versión Web en producción:** [https://mechrobotix.com/heroedelcodigo/](https://mechrobotix.com/heroedelcodigo/)
 
